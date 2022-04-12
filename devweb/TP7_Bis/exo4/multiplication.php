@@ -15,14 +15,20 @@
           $nombreRandom = rand(0,10);
         }
         else {
+
           $nombreRandom = $_POST['nombreRand'];
+          $temp = array();
+          for ($i=0; $i <= 10; $i++) {
+            array_push($temp, $_POST["x$i"]);
+            
+          }
         }
         echo "<form action='multiplication.php' method='POST'>";
           
         for ($i=0; $i <= 10; $i++) {
             
           echo "
-            $nombreRandom x $i = <input type='text' name='x$i' id='x$i'>
+            $nombreRandom x $i = <input type='text' name='x$i' id='x$i' value=$temp[$i]>
               <br \> ";
         }
         echo "<input id='nombrerRand' name='nombreRand' type='hidden' value=$nombreRandom>";

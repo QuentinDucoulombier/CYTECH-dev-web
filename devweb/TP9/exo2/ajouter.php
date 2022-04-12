@@ -20,7 +20,7 @@
 
   echo "<table id = 'tabfilm'>";
   echo "<th> Titre </th>";
-   echo "<th> Realisateur </th>";
+  echo "<th> Realisateur </th>";
   echo "<th> Date de realisation </th>";
   echo "<th> Durée </th>";
   foreach($film  as $R => $nouveauFilm){
@@ -31,6 +31,6 @@
       echo "</tr>";
   }
   echo "</table>";
-
+  //echo $( "#actualisation" ).load(window.location.href + " #actualisation" );
 
 ?>

@@ -4,6 +4,8 @@
         <meta charset="utf-8">
         <title>Biblio</title>
         <link rel="stylesheet" type="text/css" href="style.css"/>
+        <script type="text/javascript" src="prototype.js"></script>
+        
     </head>
     <body>
 		<h1>La maxi bibli</h1>
@@ -12,7 +14,7 @@
 
             <?php
                 //bonne idee de mettre le h2 et le div separée ?
-                echo "<div actualisation>";
+                echo "<div id='actualisation'>";
                 $listeFilm = file_get_contents("mediatheque.json");
                 
                 $film = json_decode($listeFilm, true);
@@ -29,7 +31,7 @@
                         echo "</tr>";
                     }
                     echo "</table>";
-                echo "</div>";
+                    echo "</div>";
             ?>
         </div>
         <h2>Ajouter un film</h2>
@@ -59,7 +61,12 @@
             {
                 if (this.readyState == 4 && this.status == 200)
                 {
-                    document.getElementById("tabfilm").innerHTML = this.responseText;
+                    document.getElementById("actualisation").innerHTML = this.responseText;
+                    
+                    //$( "#actualisation" ).load(window.location.href + " #actualisation" );
+                    //$("#actualisation").load(" #actualisation > *");
+                    //location.reload();
+                    
                 }
             };
             xhttp.open("POST", "ajouter.php", true);
