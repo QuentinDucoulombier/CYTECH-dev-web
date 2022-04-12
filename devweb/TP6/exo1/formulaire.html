@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <meta charset="utf-8">
+        <title>CY Inscription</title>
+        <link rel="stylesheet" type="text/css" href="formulaire.css"/>
+    </head>
+    <body>
+      <h1>Copie du formulaire de CY</h1>
+      <form id="monForm" name="monForm">
+        <fieldset id="InfoPerso">
+          <legend>Information personnelle</legend>
+          <label>Nom</label> 
+          <input type="text" id="nom" name="nom">
+          <label>Prénom</label> 
+          <input type="text" id="prenom" name="prenom">
+          <label>Date</label>
+          <input type="date" id="Date" name="Date">
+          <label>Numero de Telephone</label>
+          <input type="tel" id="Telephone" name="Telephone">      
+        </fieldset>
+        <fieldset id="Adresse">
+          <legend>Adresse</legend>
+          <label for=Numero>N°</label>
+          <input type="number" id="Numero" name="Numero" min="1" max="1000">
+          <label for="Appelation">Appelation</label>
+          <input type="text" id="Appelation" name="Appelation">
+          <label for=CodePostal>Code Postal</label>
+          <input type="number" id="CodePostal" name="CodePostal" min="1000" max="10000">
+          <label for="Ville">Ville</label>
+          <input type="text" id="Ville" name="Ville">
+        </fieldset>
+        <fieldset id="Hobbies">
+          <legend for="Sport">Sport</legend>
+          <input list="Sport" name="sport" id="sport">
+          <datalist id="Sport">
+            <option value="Tennis">
+            <option value="Foot">
+            <option value="Hand">
+            <option value="Volley">
+            <option value="Autre">
+          </datalist>
+          <legend for="Musique">Musique</legend>
+          <input list="Musique" name="musique" id="musique">
+          <datalist id="Musique">
+            <option value="Rock">
+            <option value="Rap">
+            <option value="Electro">
+            <option value="Lofi">
+            <option value="Autre">
+            <option value="Encore autre">
+          </datalist>
+
+        </fieldset>
+      </form>
+        
+    </body>
+    
+</html>

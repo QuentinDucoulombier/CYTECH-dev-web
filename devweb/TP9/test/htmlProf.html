@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<div id="demo">
+			taxe <input type="number" id="taxe">
+			<button type="button" onclick="payer()">Payer en gros</button>
+		</div>
+	</body>
+</html>
+
+
+<script>
+	function payer()
+	{
+		taxe = document.getElementById("taxe").value;
+		xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{		
+				document.getElementById("demo").innerHTML = this.responseText;
+			}
+		};
+		xhttp.open("GET", "phpProf.php?taxe="+taxe, true);
+		xhttp.send();
+
+	}
+
+
+</script>
+
+
+<!--
+	taxe <input type="number" id="taxe1">
+	taxe <input type="number" id="taxe2">
+	taxe <input type="number" id="taxe3">
+	<button type="button" onclick="payer()">Payer</button>
+	</div>
+	</body>
+</html> 
+
+<script>
+	function payer(){
+																
+		taxe1=document.getElementById("taxe1").value;	  
+		taxe2=document.getElementById("taxe2").value;	  
+		taxe3=document.getElementById("taxe3").value;	  
+
+		mesTaxes={"t1":taxe1,"t2":taxe2,"t3":taxe3} 		
+																						
+		mesParams = JSON.stringify(mesTaxes);
+																						
+		xhttp = new XMLHttpRequest(); 
+																						 
+		xhttp.onreadystatechange = function() {
+
+		if (this.readyState == 4 && this.status == 200) {		
+			document.getElementById("demo").innerHTML = this.responseText;
+		}
+		};
+																						  
+		xhttp.open("GET", "traitement2.php?taxes="+mesParams, true);
+		xhttp.send();
+																					 
+		}
+</script>
+-->

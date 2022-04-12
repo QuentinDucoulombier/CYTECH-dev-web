@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Pizza du crous</title>
+        <link rel="stylesheet" type="text/css" href="pizza.css"/>
+        
+    </head>
+    <body>
+        <h1>La pizza du crous</h1>
+        <form id="monFormPizza" name="monFormPizza" action="pizzaCommander.html" method="get">
+            <label for="Pate">La Pâte</label>
+            <input list="Pate" name="pates" id="pates">
+            <datalist id="Pate">
+                <option value="Napolitaine">
+                <option value="Romaine">
+                <option value="Foccacia">
+                <option value="Verte">
+                <option value="Rose">
+                <option value="Normal frr comment ca un choix de pâte">
+            </datalist>
+            <label for="Base">La base</label>
+            <input list="Base" name="bases" id="bases">
+            <datalist id="Base">
+                <option value="Crême">
+                <option value="Tomate">
+            </datalist>
+            <label for="Ingredient1">Ingredient 1</label>
+            <select name="Ingredient1" id="Ingredient1" size="6">
+                <option>Jambon</option>
+                <option>Poulet</option>
+                <option>Gruyere</option>
+                <option>Gordonzola</option>
+                <option>Oeuf</option>
+                <option>Parmezan</option>
+            </select>
+            <label for="Ingredient2">Ingredient 2</label>
+            <select name="Ingredient2" id="Ingredient2" size="6">
+                <option>Jambon</option>
+                <option>Poulet</option>
+                <option>Gruyere</option>
+                <option>Gordonzola</option>
+                <option>Oeuf</option>
+                <option>Parmezan</option>
+            </select>
+            <label for="Ingredient3">Ingredient 3</label>
+            <select name="Ingredient3" id="Ingredient3" size="6">
+                <option>Jambon</option>
+                <option>Poulet</option>
+                <option>Gruyere</option>
+                <option>Gordonzola</option>
+                <option>Oeuf</option>
+                <option>Parmezan</option>
+            </select>
+            <label>Carte d'identité</label>
+            Oui<input type="radio" id="oui" name="oui" value="Oui">
+            Non<input type="radio" id="non" name="non" value="Non">
+            <label for="cuistots">Colere du cuistot :</label>
+            <input type="range" id="points" name="points" min="0" max="10">
+            <br />
+            <input type="submit" id="validation" name="validation" value="Validation">
+            <input type="reset" id="reset" name="reset" value="Reset">
+        </form>
+        
+        
+    </body>
+    
+</html>

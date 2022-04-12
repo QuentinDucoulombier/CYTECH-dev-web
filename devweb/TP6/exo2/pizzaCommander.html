@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Panier</title>
+        <link rel="stylesheet" type="text/css" href="pizza.css"/>
+        
+    </head>
+    <body>
+        <h1>Confirmation et info perso</h1>
+            <div id="confirmation">
+            <h2>Ma belle pizza ^^</h2>
+            <p>Pâte selectionner : <span id="pate"></span></p>
+            <p>Base selectionner : <span id="base"></span></p>
+            <p>Ingredient 1 selectionner : <span id="Ingredient1"></span></p>
+            <p>Ingredient 2 selectionner : <span id="Ingredient2"></span></p>
+            <p>Ingredient 3 selectionner : <span id="Ingredient3"></span></p>
+            <p>Fidelite : <span id="fidelite"></span></p>
+            <p>Etat du cuistot : <span id="cuistot"></span></p>
+            <script type="text/javascript" src="pizza.js"></script>
+        </div>
+
+        <div id="infoPero">
+            <h2>Mes Information Perso</h2>
+            <form id="infoPerso" name="infoPerso" action="pizzaFinal.html" method="get">
+                <label>Nom</label> 
+                <input type="text" id="nom" name="nom" required="required">
+                <label>Prénom</label> 
+                <input type="text" id="prenom" name="prenom" required="required">
+                <label>Numero de Telephone</label>
+                <input type="tel" id="Telephone" name="Telephone" required="required">     
+                <label for=Numero>N°</label>
+                <input type="number" id="Numero" name="Numero" min="1" max="1000" required="required">
+                <label for="Appelation">Nom de rue</label>
+                <input type="text" id="Appelation" name="Appelation" required="required">
+                <label for=CodePostal>Code Postal</label>
+                <input type="number" id="CodePostal" name="CodePostal" min="1100" max="100000" required="required">
+                <label for="Ville">Ville</label>
+                <input type="text" id="Ville" name="Ville" required="required">
+                <p></p>
+                <input type="submit" id="validation" name="validation" value="Validation">
+                
+            </form>
+        </div>
+    </body>
+    
+</html>

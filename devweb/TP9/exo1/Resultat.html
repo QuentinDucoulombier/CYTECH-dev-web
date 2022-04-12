@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8">
+        <title>Equation</title>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+    </head>
+	<body>
+		<h1>Equation du second degré</h1>
+		<h2>Saisis des valeurs</h2>
+		<div id="calcul">
+			<p>a <input type="number" id="a"></p>
+			<p>b <input type="number" id="b"></p>
+			<p>c <input type="number" id="c"></p>
+			<button type="button" onclick="calcul()">Resoudre</button>
+		</div>
+		<h2>Resultat</h2>
+		<div id="resultat">
+
+		</div>
+	</body>
+</html> 
+
+<script>
+	function calcul(){
+																
+		a=document.getElementById("a").value;	  
+		b=document.getElementById("b").value;	  
+		c=document.getElementById("c").value;	  
+
+		mesValeurs={"t1":a,"t2":b,"t3":c} 		
+																						
+		mesParams = JSON.stringify(mesValeurs);
+																						
+		xhttp = new XMLHttpRequest(); 
+																						 
+		xhttp.onreadystatechange = function() {
+
+		if (this.readyState == 4 && this.status == 200) {		
+			document.getElementById("resultat").innerHTML = this.responseText;
+		}
+		};
+																						  
+		xhttp.open("GET", "Calcul.php?valeurs="+mesParams, true);
+		xhttp.send();
+																					 
+	}
+</script>
