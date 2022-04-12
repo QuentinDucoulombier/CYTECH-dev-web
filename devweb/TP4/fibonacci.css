@@ -1,0 +1,18 @@
+*
+{
+  text-align: center;
+
+}
+
+div
+{
+  background-color: black;
+  color: white;
+  border-style: dashed;
+  border-color: blue;
+}
+
+strong
+{
+  font-weight: bold;
+}

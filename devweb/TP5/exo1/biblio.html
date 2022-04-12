@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Le Titre</title>
+        <link rel="stylesheet" type="text/css" href="biblio.css"/>
+        <script type="text/javascript" src="biblio.js"></script>
+    </head>
+    <body>
+      <h1>Bibliotheque</h1>
+      <br><div>
+        <select id="mySelect" size="3" onclick="myFunction()">
+          <option>Les Sardines</option>
+          <option>Jack UZI</option>
+          <option>Bob Marley</option>
+          <option>Angele</option>²
+        </select>
+      </div><br>
+      <form id="form1">
+        <h3>Ajouter un artiste</h3>
+        <input type="text" id="add" name="ajout_artiste">
+        <button type="button" onclick="addChild()">Valider</button>
+        <br>
+        <h3>Supprimer un artiste</h3>
+        <input type="text" id="supp" name="supp_artiste">
+        <button type="button" onclick="killChild()">Valider</button>
+      </form>
+    </body>
+  </html>
