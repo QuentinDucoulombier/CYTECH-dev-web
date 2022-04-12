@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>Biblio</title>
         <link rel="stylesheet" type="text/css" href="style.css"/>
-        <script type="text/javascript" src="prototype.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js"></script>
         
     </head>
     <body>
