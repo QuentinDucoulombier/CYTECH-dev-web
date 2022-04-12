@@ -12,9 +12,10 @@
 
             <?php
                 //bonne idee de mettre le h2 et le div separée ?
+                echo "<div actualisation>";
                 $listeFilm = file_get_contents("mediatheque.json");
+                
                 $film = json_decode($listeFilm, true);
-                //echo "</div>;
                     echo "<table id = 'tabfilm'>";
                     echo "<th> Titre </th>";
                     echo "<th> Realisateur </th>";
@@ -28,6 +29,7 @@
                         echo "</tr>";
                     }
                     echo "</table>";
+                echo "</div>";
             ?>
         </div>
         <h2>Ajouter un film</h2>
