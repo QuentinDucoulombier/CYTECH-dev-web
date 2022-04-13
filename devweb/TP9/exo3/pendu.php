@@ -9,7 +9,7 @@
         <h1>Super jeu du pendu</h1>
         <div id="start">
             <p>
-			<button type="button" onclick="start()">Commencer</button>
+			<button type="button" onClick="start()">Commencer</button>
             </p>
 		</div>
         <div id="etat">            
@@ -20,32 +20,32 @@
             ?>
         </div>
         <div id="lettre">
-           <input type="submit" id="A" value="a">
-           <input type="submit" id="B" value="b">
-           <input type="submit" id="C" value="c">
-           <input type="submit" id="D" value="d">
-           <input type="submit" id="E" value="e">
-           <input type="submit" id="F" value="f">
-           <input type="submit" id="G" value="g">
-           <input type="submit" id="H" value="h">
-           <input type="submit" id="I" value="i">
-           <input type="submit" id="J" value="j">
-           <input type="submit" id="K" value="k">
-           <input type="submit" id="L" value="l">
-           <input type="submit" id="M" value="m">
-           <input type="submit" id="N" value="n">
-           <input type="submit" id="O" value="o">
-           <input type="submit" id="P" value="p">
-           <input type="submit" id="Q" value="q">
-           <input type="submit" id="R" value="r">
-           <input type="submit" id="S" value="s">
-           <input type="submit" id="T" value="t">
-           <input type="submit" id="U" value="u">
-           <input type="submit" id="V" value="v">
-           <input type="submit" id="W" value="w">
-           <input type="submit" id="X" value="x">
-           <input type="submit" id="Y" value="y">
-           <input type="submit" id="Z" value="z">
+           <input type="button" id="lettreZ"  value="a">
+           <input type="button" id="lettre"  value="b">
+           <input type="button" id="lettre"  value="d">
+           <input type="button" id="lettre"  value="c">
+           <input type="button" id="lettre"  value="e">
+           <input type="button" id="lettre"  value="f">
+           <input type="button" id="lettre"  value="g">
+           <input type="button" id="lettre"  value="h">
+           <input type="button" id="lettre"  value="i">
+           <input type="button" id="lettre"  value="j">
+           <input type="button" id="lettre"  value="k">
+           <input type="button" id="lettre"  value="l">
+           <input type="button" id="lettre"  value="m">
+           <input type="button" id="lettre"  value="n">
+           <input type="button" id="lettre"  value="o">
+           <input type="button" id="lettre"  value="p">
+           <input type="button" id="lettre"  value="q">
+           <input type="button" id="lettre"  value="r">
+           <input type="button" id="lettre"  value="s">
+           <input type="button" id="lettre"  value="t">
+           <input type="button" id="lettre"  value="u">
+           <input type="button" id="lettre"  value="v">
+           <input type="button" id="lettre"  value="w">
+           <input type="button" id="lettre"  value="x">
+           <input type="button" id="lettre"  value="y">
+           <input type="button" id="lettre"  value="z">
         </div> 
         
     </body>
@@ -53,13 +53,23 @@
 
 
 <script>
-    /*function clique()
-    {        
-        document.getElementById("lettre").onclick = null;
+    var btn = document.querySelector('input');
+    btn.onclick = clique();
+
+    function clique()
+    {    
+        //$lettre = array();
+        const lettre = ['test', document.getElementById("lettreZ").value];
+        lettre.push(document.getElementById("lettreZ").value);
+        console.log(lettre);
+           
+        
+        //document.getElementById("lettre").onClick = null;
         //document.getElementById("reponse").innerHTML+='<p>test</p>';
-    }*/
+    }
     function start(){
-        A=document.getElementById("A").value;
+        
+        /*A=document.getElementById("A").value;
         B=document.getElementById("B").value;
         C=document.getElementById("C").value;
         D=document.getElementById("D").value;
@@ -84,7 +94,7 @@
         W=document.getElementById("W").value;
         X=document.getElementById("X").value;
         Y=document.getElementById("Y").value;
-        Z=document.getElementById("Z").value;
+        Z=document.getElementById("Z").value;*/
         
         
 
@@ -100,9 +110,10 @@
         };
         xhttp.open("POST", "ajouter.php", true);
         xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhttp.send("A="+A+"&B="+B+"&C="+C+"&D="+D+"&E="+E+"&F="+F+"&G="+G+"&H="+H+"&I="+I+"&J="+J+"&K="+K+"&L="+L+"&M="+M+"&N="+N+"&O="+O+"&P="+P+"&Q="+Q+"&R="+R+"&S="+S+"&T="+T+"&U="+U+"&V"=+V+"&W="+W+"&Y"=+Y+"&Z"+Z);
+        xhttp.send("A="+A+"&B="+B+"&C="+C+"&D="+D+"&E="+E+"&F="+F+"&G="+G+"&H="+H+"&I="+I+"&J="+J+"&K="+K+"&L="+L+"&M="+M+"&N="+N+"&O="+O+"&P="+P+"&Q="+Q+"&R="+R+"&S="+S+"&T="+T+"&U="+U+"&V="+V+"&W="+W+"&Y="+Y+"&Z="+Z);
 
-}
+
+    }
     
 
 </script>
