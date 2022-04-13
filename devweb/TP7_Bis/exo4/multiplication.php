@@ -7,9 +7,9 @@
     </head>
     <body>
       <h1>La maxi table de multiplication</h1>
-      <!-- <form action="verifierConnexion.php" method="POST"> -->
+      
       <?php
-      ///// TODO: genre faire un if avant le nombreRand
+      
         if(!isset($_POST["nombreRand"]))
         {
           $nombreRandom = rand(0,10);

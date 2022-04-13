@@ -91,7 +91,7 @@ var restant = 10;
         xhttp.send("lettre="+lettre+"&restant="+restant);
 
 
-			}
+	}
 
 
 </script>
