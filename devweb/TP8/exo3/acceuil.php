@@ -69,6 +69,6 @@
       <p></p>
       <form method="POST" action="connexion.php">
         <input type="submit" name="OUT" value="deconnexion"/>
-
+      </form>
     </body>
 </html>
