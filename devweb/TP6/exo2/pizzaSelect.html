@@ -10,15 +10,15 @@
         <h1>La pizza du crous</h1>
         <form id="monFormPizza" name="monFormPizza" action="pizzaCommander.html" method="get">
             <label for="Pate">La Pâte</label>
-            <input list="Pate" name="pates" id="pates">
-            <datalist id="Pate">
-                <option value="Napolitaine">
-                <option value="Romaine">
-                <option value="Foccacia">
-                <option value="Verte">
-                <option value="Rose">
-                <option value="Normal frr comment ca un choix de pâte">
-            </datalist>
+            <select name="pates" id="pates">
+                <option value="">--Please choose an option--</option>
+                <option value="Napolitaine">Napolitaine</option>
+                <option value="Romaine">Romaine</option>
+                <option value="Foccacia">Foccacia</option>
+                <option value="Verte">Verte</option>
+                <option value="Rose">Rose</option>
+                <option value="Normal frr comment ca un choix de pâte">Normal frr comment ca un choix de pâte</option>
+            </select>
             <label for="Base">La base</label>
             <input list="Base" name="bases" id="bases">
             <datalist id="Base">

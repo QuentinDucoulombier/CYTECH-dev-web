@@ -1,0 +1,22 @@
+.grid{
+  display: grid;
+  grid-template: ". . . . .";
+  width: 500px;
+  height: 400px;
+  padding: 0;
+  margin: 0;
+}
+.grid *{
+  padding: 0;
+  margin: 0;
+}
+.case{
+  border: 1px solid black;
+}
+.case, .case *{
+  width: 100px;
+  height: 100px;
+}
+img{
+  cursor: pointer;
+}

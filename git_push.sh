@@ -1,4 +1,3 @@
-make clean
 git add .
 echo "Entrez le commit"
 read x

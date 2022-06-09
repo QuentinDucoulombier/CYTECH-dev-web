@@ -1,0 +1,62 @@
+
+body{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: red;
+}
+
+.Magasin {
+  background: grey;
+  color: white;
+  width: 20%;
+  padding-left: 10px;
+}
+.Magasin .container_argent{
+  display: flex;
+}
+
+.stock{
+  display: flex;
+  justify-content:space-between;
+
+  width: 100%;
+}
+
+.Choix , .Panier{
+  width: 35%;
+  text-align: center;
+}
+h3{
+  text-align: center;
+}
+
+.Choix{
+  background: green;
+
+}
+
+.Panier{
+  background: pink;
+
+}
+
+.DVDs{
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+
+}
+.DVD {
+  padding: 2px;
+}
+.DVD img{
+  height:70px;
+}
+.DVD h6{
+  font-size: 0.5em;
+}
+.dispo h6{
+  display: none;
+}

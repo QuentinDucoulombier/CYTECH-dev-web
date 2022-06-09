@@ -1,0 +1,61 @@
+
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h3>Ma pizza</h3>
+    <form action="commander.html" method="get">
+        <label for="pate">La pâte</label>
+        <select name="pate" id="pate">
+            <option value="Napolitaine">Napolitaine</option>
+            <option value="Romaine">Romaine</option>
+            <option value="Foccacia">Foccacia</option>
+        </select>
+        <label for="sauce">La sauce</label>
+        <select name="sauce" id="sauce">
+            <option value="Tomate">Tomate</option>
+            <option value="Creme">Creme</option>
+        </select>
+        <label for="ingre-1">Ingredient-1</label>
+        <select class="ingre" name="ingre-1" id="ingre-1" size="3">
+            <option value="aucun" selected hidden>Aucun</option>
+            <option value="Jambon" >Jambon</option>
+            <option value="Poulet">Poulet</option>
+            <option value="Gruyere">Gruyere</option>
+        </select>
+        <label for="ingre-2">Ingredient-2</label>
+        <select class="ingre" name="ingre-2" id="ingre-2" size="3">
+            <option value="aucun" selected hidden>Aucun</option>
+            <option value="Jambon" >Jambon</option>
+            <option value="Poulet">Poulet</option>
+            <option value="Gruyere">Gruyere</option>
+        </select>
+        <label for="ingre-3">Ingredient-3</label>
+        <select class="ingre" name="ingre-3" id="ingre-3" size="3">
+            <option value="aucun" selected hidden>Aucun</option>
+            <option value="Jambon" >Jambon</option>
+            <option value="Poulet">Poulet</option>
+            <option value="Gruyere">Gruyere</option>
+        </select>
+        
+        <div class="inline">
+            <p>Avez-vous une carte de fidélité ?</p>
+            <br>
+            <label for="oui">Oui</label>
+            <input type="radio" name="fidel" id="oui" value="oui" required>
+            <label for="non">Non</label>
+            <input type="radio" name="fidel" id="non" value="non" required>
+        </div>
+        <div class="inline">
+            <input type="submit" value="Envoyer la commande">
+            <input type="reset">
+        </div>
+    </form>
+    
+</body>
+</html>

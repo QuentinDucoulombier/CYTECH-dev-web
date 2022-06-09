@@ -1,0 +1,12 @@
+form *{
+    display: block;
+}
+.inline *{
+    display: inline ;
+}
+
+.ingre{
+    height: 100px;
+    width: 150px;
+    overflow: auto;
+}

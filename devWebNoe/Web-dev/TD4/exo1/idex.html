@@ -1,0 +1,33 @@
+
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <select id="mySelect" size="4">
+        <option>Harry</option>
+        <option>Hermione</option>
+        <option>Ron</option>
+        <option>Drago</option>
+    </select>
+
+    <form>
+
+        <label for="add-text">Ajouter un artiste</label>
+        <div class="int">
+           <input type="text" name="add-text" id="add-text">
+           <input type="button" value="Valider" onclick="add_artist()">
+        </div>
+        <label for="del-text">Supprimer un artiste</label>
+        <div class="int">
+            <input type="text" name="del-text" id="del-text">
+            <input type="button" value="Valider" onclick="del_artist()">
+        </div>
+    </form>
+</body>
+</html>

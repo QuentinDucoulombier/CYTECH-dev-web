@@ -1,0 +1,62 @@
+
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+<body>
+  <div class="Magasin">
+    <h1>DVD</h1>
+    <p>Tous les DVDs à 2€50!!!</p>
+    <p>Cliquez sur l'image pour (dé)selectionner un DVD</p>
+    <div class="container_argent">
+      <p>Montant du panier:</p>
+      <p id="argent">0</p>
+      <p>€</p>
+    </div>
+    <form action="page2.html" method="get">
+      <input type="hidden" name="montant" value="">
+      <input type="hidden" name="contenu" value="">
+      <input type="submit">
+    </form>
+  </div>
+  <div class="stock">
+    <div class="Choix">
+      <h3>DVDs dispo</h3>
+
+      <div class="DVDs" id="dispo">
+        <div class="DVD dispo">
+          <h6>le rocher du lion</h6>
+          <img src="https://www.unpasseportencavale.com/assets1pec/uploads/2020/07/Copyright2020_Un_Passeport_En_Cavale_Sigiriya_Lions_Rock_02.jpg" alt="le rocher du lion">
+        </div>
+        <div class="DVD dispo">
+          <h6>le rocher du atomique</h6>
+          <img src="https://ecocampingdularzac.org/IMG/arton119.jpg?1460489840" alt="le rocher du atomique">
+        </div>
+        <div class="DVD dispo">
+          <h6>le rocher du atomique</h6>
+          <img src="https://ecocampingdularzac.org/IMG/arton119.jpg?1460489840" alt="le rocher du atomique">
+        </div>
+        <div class="DVD dispo">
+          <h6>le rocher du atomique</h6>
+          <img src="https://ecocampingdularzac.org/IMG/arton119.jpg?1460489840" alt="le rocher du atomique">
+        </div>
+      </div>
+
+    </div>
+    <div class="panier">
+      <h3>DVDs choisis</h3  >
+
+      <div class="DVDs" id="panier">
+
+      </div>
+
+    </div>
+  </div>
+  <script>main()</script>
+</body>
+</html>
