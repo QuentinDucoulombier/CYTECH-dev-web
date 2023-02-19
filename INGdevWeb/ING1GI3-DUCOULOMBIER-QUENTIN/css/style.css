@@ -1,0 +1,60 @@
+h1
+{
+    text-align: center;
+}
+
+#logo
+{
+    
+    height: 10%;
+    width: 10%;
+    float: right;
+}
+
+#Menu
+{
+    
+    left: 0;
+    width: 160px;
+    height: 100%;
+    position: fixed;
+    padding-top: 20px;
+}
+
+ul, li{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: grey;
+}
+
+#menuHor{
+    margin-top: 15%;
+    list-style: nonde;
+    display: inline-block;
+    border:solid;
+    align-items: center;
+
+}
+
+#ensMenuHor{
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+}
+
+#Main {
+    margin-left: 160px; 
+    padding: 0px 10px;
+}
+
+
+table, th, td {
+    border: 1px solid;
+}
+
+label{
+    display: block;
+}
