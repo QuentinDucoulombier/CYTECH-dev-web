@@ -28,6 +28,7 @@ ul, li{
 
 header{
     background-color: grey;
+    position: relative; /*position: fixed*/
 }
 
 #menuHor{
@@ -37,6 +38,10 @@ header{
     border:solid;
     align-items: center;
 
+}
+
+img{
+    width: 8em;
 }
 
 #ensMenuHor{
@@ -54,6 +59,22 @@ header{
 table, th, td {
     border: 1px solid;
 }
+
+
+#main100km{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main1000km{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 label{
     display: block;
