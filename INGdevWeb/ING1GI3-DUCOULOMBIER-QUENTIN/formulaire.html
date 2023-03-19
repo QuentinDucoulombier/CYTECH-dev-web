@@ -4,13 +4,14 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="./css/styletest.css" />
         <title>Blog Random</title>
+        <script type="text/javascript" src="./js/scriptForm.js"></script>
     </head>
     <body>
         <header id="Header">
             <h1>Societe menfou</h1>
             <img src="./img/testlogo.png" alt="logo of the company" id="logo"/>
             <ul id="ensMenuHor">
-                <li id="menuHor"><a href="#mainAcceuil">Acceuil</a></li>
+                <li id="menuHor"><a href="accueil.html">Acceuil</a></li>
                 <li id="menuHor"><a href="product1.html#main100km">100-300 km</a></li>
                 <li id="menuHor"><a href="product1.html#main1000km">300-1 000 km</a></li>
                 <li id="menuHor"><a href="product1.html">1 000-5 000 km</a></li>
@@ -23,7 +24,7 @@
         <section id="Menu">
             <h2>Menu</h2>
             <ul>
-                <li><a href="#mainAcceuil">Acceuil</a></li>
+                <li><a href="accueil.html">Acceuil</a></li>
                 <li><a href="product1.html#main100km">100-300 km</a></li>
                 <li><a href="product1.html#main1000km">300-1 000 km</a></li>
                 <li><a href="product1.html">1 000-5 000 km</a></li>
@@ -36,15 +37,17 @@
 
         <section id="Main">
             <section id="mainContact">
-                <form action="/checkAnswers" method="post">
-                    <label for="nom">Nom</label> 
+                <form action="/checkAnswers" method="post" onsubmit="return validateForm()">
+                    <label for="nom">Nom</label>
                     <input type="text" id="nom" name="nom" required="required">
-                    <label for="prenom">Prénom</label> 
+                    <label for="prenom">Prénom</label>
                     <input type="text" id="prenom" name="prenom" required="required">
                     <label for="Telephone">Numero de Telephone</label>
-                    <input type="tel" id="Telephone" name="Telephone" required="required">  
-                    <label for="Ema">Email</label>   
-                    <input type="email" id="Email" name="Email"/>
+                    <input type="tel" id="Telephone" name="Telephone" required="required">
+                    <span id="TelephoneFormat" style="display:none;color:red;">(Format incorrect)</span>
+                    <label for="Ema">Email</label>
+                    <input type="email" id="Email" name="Email" />
+                    <span id="EmailFormat" style="display:none;color:red;">(Format incorrect)</span>
                     <label for="dReserva">Date de reservation</label>
                     <input type="date" id="dReserva" name="dReserva" required="required">
                     <label>Genre</label>

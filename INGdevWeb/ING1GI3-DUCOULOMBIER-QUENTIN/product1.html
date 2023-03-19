@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="./css/style.css" />
         <title>Blog Random</title>
         <script type="text/javascript" src="./js/script.js"></script>
+      
     </head>
     <body>
         
@@ -54,12 +55,12 @@
                             <td>100 €</td>
                             <td class="stock">5</td>
                             <td>
-                                <button type="button" id="B-">-</button>
-                                <input type="text" readonly/>
-                                <button type="button" id="B+">+</button>
+                                <button type="button" class="minus" data-direction="Nord">-</button>
+                                <input type="text" readonly class="quantity" value="0"/>
+                                <button type="button" class="plus" data-direction="Nord">+</button>
                                 
                                 <p></p>
-                                <button type="button" id="add">Ajouter au panier</button>
+                                <button type="button" class="add-to-cart" data-direction="Nord">Ajouter au panier</button>
                             </td>
                             <td><img src="https://cdn-icons-png.flaticon.com/512/16/16797.png" alt="Boussole vers le nord" class="imgIll"  onmouseover="agrandir(this)" onmouseout="reduire(this)"\></td>
                         </tr>
@@ -69,12 +70,12 @@
                             <td>100 €</td>
                             <td class="stock">5</td>
                             <td>
-                                <button type="button" id="B-">-</button>
-                                <input type="text" readonly/>
-                                <button type="button" id="B+">+</button>
+                                <button type="button" class="minus" data-direction="Ouest">-</button>
+                                <input type="text" readonly class="quantity" value="0"/>
+                                <button type="button" class="plus" data-direction="Ouest">+</button>
                                 
                                 <p></p>
-                                <button type="button" id="add">Ajouter au panier</button>
+                                <button type="button" class="add-to-cart" data-direction="Ouest">Ajouter au panier</button>
                             </td>
                             <td><img src="https://cdn-icons-png.flaticon.com/512/17/17276.png" alt="Boussole vers l'ouest" class="imgIll" onmouseover="agrandir(this)" onmouseout="reduire(this)"\></td>
                         </tr>
@@ -84,27 +85,26 @@
                             <td>100 €</td>
                             <td class="stock">5</td>
                             <td>
-                                <button type="button" id="B-">-</button>
-                                <input type="text" readonly/>
-                                <button type="button" id="B+">+</button>
+                                <button type="button" class="minus" data-direction="Sud">-</button>
+                                <input type="text" readonly class="quantity" value="0"/>
+                                <button type="button" class="plus" data-direction="Sud">+</button>
                                 
                                 <p></p>
-                                <button type="button" id="add">Ajouter au panier</button>
+                                <button type="button" class="add-to-cart" data-direction="Sud">Ajouter au panier</button>
                             </td>
                             <td><img src="https://cdn-icons-png.flaticon.com/512/16/16744.png" alt="Boussole vers le sud" class="imgIll" onmouseover="agrandir(this)" onmouseout="reduire(this)"></td>
                         </tr>
-                        <tr>
                             <td>Est</td>
                             <td>On va vers le Est</td>
                             <td>100 €</td>
                             <td class="stock">5</td>
                             <td>
-                                <button type="button" id="B-">-</button>
-                                <input type="text" readonly/>
-                                <button type="button" id="B+">+</button>
+                                <button type="button" class="minus" data-direction="Sud">-</button>
+                                <input type="text" readonly class="quantity" value="0"/>
+                                <button type="button" class="plus" data-direction="Sud">+</button>
                                 
                                 <p></p>
-                                <button type="button" id="add">Ajouter au panier</button>
+                                <button type="button" class="add-to-cart" data-direction="Sud">Ajouter au panier</button>
                             </td>
                             <td><img src="https://cdn-icons-png.flaticon.com/512/17/17259.png" alt="Boussole vers Est" class="imgIll" onmouseover="agrandir(this)" onmouseout="reduire(this)"\></td>
                         </tr>
@@ -149,5 +149,6 @@
         <footer id="Footer">
             <p class="Copyright">&#169 2014-2023 Ratio Corporation</p>
         </footer>
+        <script type="text/javascript" src="./js/panier.js"></script>
     </body>
 </html>
