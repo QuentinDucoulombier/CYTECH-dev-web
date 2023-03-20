@@ -1,3 +1,4 @@
+/*TODO: Reafficher les stock*/
 
 function agrandir(img)
 {

@@ -1,64 +1,53 @@
 
-function changeQuantity(event) {
-    const button = event.target;
-    const direction = button.getAttribute('data-direction');
-    const quantityInput = document.querySelector(`#${direction} .quantity`);
-    const quantity = parseInt(quantityInput.value);
-    const stockElement = document.querySelector(`#${direction} .stock`);
-  
-    // Check if stockElement exists before accessing its properties
-    if (stockElement) {
-      const stock = parseInt(stockElement.textContent);
-      let newQuantity;
-  
-      if (button.classList.contains('plus')) {
-        newQuantity = quantity + 1;
-  
-        // Disable plus button when stock is 0 or when quantity is equal to stock
-        if (stock === 0 || newQuantity === stock) {
-          button.disabled = true;
-        }
-  
-        // Enable minus button when quantity is greater than 0
-        if (newQuantity > 0) {
-          const minusButton = document.querySelector(`#${direction} .minus`);
-          minusButton.disabled = false;
-        }
-      } else if (button.classList.contains('minus')) {
-        newQuantity = quantity - 1;
-  
-        // Disable minus button when quantity is 0
-        if (newQuantity === 0) {
-          button.disabled = true;
-        }
-  
-        // Enable plus button when stock is greater than 0
-        if (stock > 0) {
-          const plusButton = document.querySelector(`#${direction} .plus`);
-          plusButton.disabled = false;
-        }
-      }
-  
-      // Update quantity input value
-      quantityInput.value = newQuantity;
-    }
-  }
+const plusButtons = document.querySelectorAll(".plus");
+const minusButtons = document.querySelectorAll(".minus");
 
-const plusButtons = document.querySelectorAll('.plus');
-const minusButtons = document.querySelectorAll('.minus');
+/*TODO:Desactiver le bouton de base*/
+
 
 plusButtons.forEach(button => {
-  button.addEventListener('click', event => {
-    const direction = event.target.dataset.direction;
-    changeQuantity(direction, 1);
+  button.addEventListener("click", () => {
+    
+    const direction = button.getAttribute("data-direction");
+    const stock = parseInt(document.querySelector(`tr td.stock[data-direction="${direction}"]`).textContent);
+    
+   
+    const quantity = button.parentElement.querySelector(".quantity");
+    
+   
+    let currentQuantity = parseInt(quantity.value);
+    currentQuantity++;
+    
+    
+    quantity.value = currentQuantity;
+    if (currentQuantity >= stock) {
+      button.disabled = true;
+    }
+    
+    button.parentElement.querySelector(".minus").disabled = false;
   });
 });
 
 minusButtons.forEach(button => {
-  button.addEventListener('click', event => {
-    const direction = event.target.dataset.direction;
-    changeQuantity(direction, -1);
+  button.addEventListener("click", () => {
+  
+    const direction = button.getAttribute("data-direction");
+    const stock = parseInt(document.querySelector(`tr td.stock[data-direction="${direction}"]`).textContent);
+    
+  
+    const quantity = button.parentElement.querySelector(".quantity");
+    
+    // Décrémentation de la quantité
+    let currentQuantity = parseInt(quantity.value);
+    currentQuantity--;
+    
+  
+    quantity.value = currentQuantity;
+    if (currentQuantity <= 0) {
+      button.disabled = true;
+    }
+    
+    
+    button.parentElement.querySelector(".plus").disabled = false;
   });
 });
-
-  
