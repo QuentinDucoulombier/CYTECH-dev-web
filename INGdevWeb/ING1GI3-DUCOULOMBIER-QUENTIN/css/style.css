@@ -1,3 +1,4 @@
+/*
 h1
 {
     text-align: center;
@@ -28,7 +29,7 @@ ul, li{
 
 header{
     background-color: grey;
-    position: relative; /*position: fixed*/
+    position: relative; 
 }
 
 #menuHor{
@@ -78,4 +79,233 @@ table, th, td {
 
 label{
     display: block;
-}
+}*/
+
+/* Style général */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* En-tête */
+  #Header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #Header h1 {
+    margin: 0;
+  }
+  
+  #Header #logo {
+    width: 100px;
+  }
+  
+  #Header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+  }
+  
+  #Header ul li {
+    margin: 0 10px;
+  }
+  
+  #Header ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  #Header ul li a:hover {
+    background-color: #fff;
+    color: #333;
+  }
+  
+  
+  /* Menu */
+  #Menu {
+    background-color: #eee;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    position:fixed
+    
+  }
+  
+  #Menu h2 {
+    margin-top: 0;
+  }
+  
+  #Menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #Menu li {
+    margin-bottom: 10px;
+  }
+  
+  #Menu a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  #Menu a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Section principale */
+  #Main {
+   
+    padding: 20px;
+    margin-left: 20%;
+  }
+  
+  #MainF {
+    padding: 20px;;
+  }
+
+  #Main h2 {
+    margin-top: 0;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  table th,
+  table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  table th {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  table td:last-child {
+    text-align: center;
+  }
+  
+  table .stock {
+    font-weight: bold;
+  }
+  
+  table .imgIll {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+  
+  /* Formulaire de commande */
+  table button, table input {
+    font-size: 16px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+    margin-top: 3px;
+  }
+  
+  table button:hover,
+  table input:hover {
+    background-color: #555;
+  }
+  
+  table input {
+    width: 50px;
+    text-align: center;
+  }
+  
+  table .add-to-cart {
+    background-color: #f00;
+  }
+  
+  table .add-to-cart:hover {
+    background-color: #d00;
+  }
+  
+  p {
+    margin: 0;
+  }
+  
+  /* Image agrandie au survol */
+  .imgIll:hover {
+    transform: scale(1.8);
+    transition: transform 0.5s;
+  }
+  
+
+  /* Footer */
+  
+  #Footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    margin-top: 5%;
+  }
+  
+  #Footer p {
+    margin: 0;
+    font-size: 14px;
+  }
+
+    /* Formulaire de contact */
+  
+    #mainContact {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    #mainContact form {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    #mainContact label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    #mainContact input[type="text"],
+    #mainContact input[type="tel"],
+    #mainContact input[type="email"],
+    #mainContact input[type="date"],
+    #mainContact textarea {
+  
+      padding: 5px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    
+    #mainContact input[type="submit"], #hideStocks {
+      
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 2%;
+    }
+    
+    #mainContact input[type="submit"]:hover, #hideStocks:hover {
+      background-color: #fff;
+      color: #333;
+    }

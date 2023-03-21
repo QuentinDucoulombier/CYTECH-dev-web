@@ -4,7 +4,6 @@ const minusButtons = document.querySelectorAll(".minus");
 
 /*TODO:Desactiver le bouton de base*/
 
-
 plusButtons.forEach(button => {
   button.addEventListener("click", () => {
     
