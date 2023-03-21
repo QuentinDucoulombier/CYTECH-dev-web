@@ -33,6 +33,16 @@
                     <input type="text" id="sMail" name="sMail"  required="required" \>
                     <label for="cMail">Contenu du mail</label>
                     <textarea id="cMail" name="cMail" rows="4">Veuillez saisir le sujet du mail.</textarea>
+                    <label for=metier>Metiers</label>
+                    <select name="metier" id="metier">
+                        <option value="">-- Liste de metiers ^^ --</option>
+                        <option value="Agriculteur">Agriculteur</option>
+                        <option value="Meunier">Meunier</option>
+                        <option value="Horticulteur">Horticulteur</option>
+                        <option value="Aubergiste">Aubergiste</option>
+                        <option value="Faucher">Faucher</option>
+                        <option value="Serveur">Serveur</option>
+                    </select>
                     <label>Genre</label>
                     <label for="Homme">Homme</label>
                     <input type="radio" id="Homme" name="Genre" value="Homme">

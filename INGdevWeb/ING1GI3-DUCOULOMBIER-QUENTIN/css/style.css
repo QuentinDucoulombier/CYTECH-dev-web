@@ -202,7 +202,8 @@ body {
     #mainContact input[type="tel"],
     #mainContact input[type="email"],
     #mainContact input[type="date"],
-    #mainContact textarea {
+    #mainContact textarea,
+    #mainContact select {
   
       padding: 5px;
       margin-bottom: 10px;
