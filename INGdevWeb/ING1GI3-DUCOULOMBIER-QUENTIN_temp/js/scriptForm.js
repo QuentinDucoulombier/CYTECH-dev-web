@@ -7,7 +7,7 @@ function validateForm() {
     var dateReserv = document.getElementById("dReserva").value;
     var sujetMail = document.getElementById("sMail").value;
     var contenuMail = document.getElementById("cMail").value;
-    var genre = document.querySelector('input[name="Genre"]:checked');
+
   
     if (nom == "") {
       document.getElementById("nom").style.borderColor = "red";
@@ -37,10 +37,15 @@ function validateForm() {
     /*On peut pas reserver a une date precedente*/
     var now = new Date();
     console.log(now);
-    if (reservationDate < now) {
-        document.getElementById("dReserva").style.borderColor = "red";
-        document.getElementById("DateReservaError").style.display = "inline";
-        return false;
+    /*console.log(dateReserv);
+    console.log(dateReserv.replace(/-/g,","));*/
+    dateReserv = new Date(dateReserv.replace(/-/g,","));
+    console.log(dateReserv)
+    if (dateReserv < now) {
+      
+      document.getElementById("dReserva").style.borderColor = "red";
+      document.getElementById("dReservaFormat").style.display = "inline";
+      return false;
     }
   
     if (sujetMail == "") {
@@ -49,12 +54,8 @@ function validateForm() {
     }
   
     if (contenuMail == "" || contenuMail == "Veuillez saisir le sujet du mail.") {
+      
       document.getElementById("cMail").style.borderColor = "red";
-      return false;
-    }
-
-    if (genre === null) {
-      document.getElementById("MainF").querySelectorAll('label')[8].style.color = "red";
       return false;
     }
   

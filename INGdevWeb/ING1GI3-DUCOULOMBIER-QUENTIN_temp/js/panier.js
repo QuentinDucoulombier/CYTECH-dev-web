@@ -2,12 +2,12 @@
 const plusButtons = document.querySelectorAll(".plus");
 const minusButtons = document.querySelectorAll(".minus");
 
-/*Desactive le bouton de base*/
+/*On desactive le moins de base car a value a 0*/
 minusButtons.forEach(button => {
   button.disabled = true;
 });
 
-/*Autre cas*/
+/*Script pour le bouton -*/
 plusButtons.forEach(button => {
   button.addEventListener("click", () => {
     
@@ -27,6 +27,7 @@ plusButtons.forEach(button => {
   });
 });
 
+/*Script pour le bouton +*/
 minusButtons.forEach(button => {
   button.addEventListener("click", () => {
   

@@ -3,7 +3,7 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* En-tête */
+/* Header */
 #Header {
   background-color: #333;
   color: #fff;
@@ -158,8 +158,9 @@ table .add-to-cart:hover {
 #Formulaire p {
   margin: 0;
 }
+ 
+/* Image agrandie */
 
-/* Image agrandie au survol */
 .imgIll:hover {
   transform: scale(1.8);
   transition: transform 0.5s;
@@ -181,48 +182,48 @@ table .add-to-cart:hover {
   font-size: 14px;
 }
 
-  /* Formulaire de contact */
+/* Formulaire */
 
-  #mainContact {
-      max-width: 500px;
-      margin: 0 auto;
-  }
-  
-  #mainContact form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  #mainContact label {
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  #mainContact input[type="text"],
-  #mainContact input[type="tel"],
-  #mainContact input[type="email"],
-  #mainContact input[type="date"],
-  #mainContact textarea,
-  #mainContact select {
+#mainContact {
+    max-width: 500px;
+    margin: 0 auto;
+}
 
-    padding: 5px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
+#mainContact form {
+  display: flex;
+  flex-direction: column;
+}
+
+#mainContact label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#mainContact input[type="text"],
+#mainContact input[type="tel"],
+#mainContact input[type="email"],
+#mainContact input[type="date"],
+#mainContact textarea,
+#mainContact select {
+
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#mainContact input[type="submit"], #hideStocks {
   
-  #mainContact input[type="submit"], #hideStocks {
-    
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 2%;
-  }
-  
-  #mainContact input[type="submit"]:hover, #hideStocks:hover {
-    background-color: #fff;
-    color: #333;
-  }
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 2%;
+}
+
+#mainContact input[type="submit"]:hover, #hideStocks:hover {
+  background-color: #fff;
+  color: #333;
+}
