@@ -1,7 +1,7 @@
 <?php
 
 echo 
-'<h1>Societe menfou</h1>
+'<h1>TASSTAITIDN</h1>
 <img src="../img/testlogo.png" alt="logo of the company" id="logo"/>
 <ul id="ensMenuHor">
     <li id="menuHor"><a href="index.php#mainAcceuil">Acceuil</a></li>
