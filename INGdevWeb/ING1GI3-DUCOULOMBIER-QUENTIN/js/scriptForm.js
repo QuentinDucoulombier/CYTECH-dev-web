@@ -1,50 +1,64 @@
 function validateForm() {
-    // Récupération des valeurs saisies dans les champs
+
     var nom = document.getElementById("nom").value;
     var prenom = document.getElementById("prenom").value;
-    var telephone = document.getElementById("Telephone").value;
+    var tel = document.getElementById("Telephone").value;
     var email = document.getElementById("Email").value;
-    var dateReservation = document.getElementById("dReserva").value;
+    var dateReserv = document.getElementById("dReserva").value;
+    var sujetMail = document.getElementById("sMail").value;
+    var contenuMail = document.getElementById("cMail").value;
 
-    // Expression régulière pour vérifier le format de l'email
-    var emailRegex = /^\S+@\S+\.\S+$/;
-    //TODO:Finir
-    /*
-    var nameRegex = /^[a-zA-Z ]+$/;
-
-    if (!(/^\d{10}$/.test(nom))) {
-        document.getElementById("Nom").style.borderColor = "red";
-        document.getElementById("Nom").value = telephone;
-        document.getElementById("Nom").style.display = "inline";
-        return false;
-    } else {
-        document.getElementById("Nom").style.borderColor = "";
-        document.getElementById("Nom").style.display = "none";
+  
+    if (nom == "") {
+      document.getElementById("nom").style.borderColor = "red";
+      return false;
     }
-    */
-
-    // Vérification du format du numéro de téléphone
-    if (!(/^\d{10}$/.test(telephone))) {
-        document.getElementById("Telephone").style.borderColor = "red";
-        document.getElementById("Telephone").value = telephone;
-        document.getElementById("TelephoneFormat").style.display = "inline";
-        return false;
-    } else {
-        document.getElementById("Telephone").style.borderColor = "";
-        document.getElementById("TelephoneFormat").style.display = "none";
+  
+    if (prenom == "") {
+      document.getElementById("prenom").style.borderColor = "red";
+      return false;
     }
-
-    // Vérification du format de l'email
-    if (!emailRegex.test(email)) {
-        document.getElementById("Email").style.borderColor = "red";
-        document.getElementById("Email").value = email;
-        document.getElementById("EmailFormat").style.display = "inline";
-        return false;
-    } else {
-        document.getElementById("Email").style.borderColor = "";
-        document.getElementById("EmailFormat").style.display = "none";
+  
+    var telFormat = /^((\+)33|0)[1-9](\d{2}){4}$/;
+    if (!tel.match(telFormat)) {
+      document.getElementById("Telephone").style.borderColor = "red";
+      document.getElementById("TelephoneFormat").style.display = "inline";
+      return false;
     }
-
-    // Si toutes les données sont valides, on renvoie true
+  
+    
+    var emailFormat = /^\S+@\S+\.\S+$/; 
+    if (!email.match(emailFormat)) {
+      document.getElementById("Email").style.borderColor = "red";
+      document.getElementById("EmailFormat").style.display = "inline";
+      return false;
+    }
+  
+    /*On peut pas reserver a une date precedente*/
+    var now = new Date();
+    console.log(now);
+    /*console.log(dateReserv);
+    console.log(dateReserv.replace(/-/g,","));*/
+    dateReserv = new Date(dateReserv.replace(/-/g,","));
+    console.log(dateReserv)
+    if (dateReserv < now) {
+      
+      document.getElementById("dReserva").style.borderColor = "red";
+      document.getElementById("dReservaFormat").style.display = "inline";
+      return false;
+    }
+  
+    if (sujetMail == "") {
+      document.getElementById("sMail").style.borderColor = "red";
+      return false;
+    }
+  
+    if (contenuMail == "" || contenuMail == "Veuillez saisir le sujet du mail.") {
+      
+      document.getElementById("cMail").style.borderColor = "red";
+      return false;
+    }
+  
     return true;
-}
+  }
+  

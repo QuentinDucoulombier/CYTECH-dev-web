@@ -14,8 +14,15 @@
         </section>
         <section id="Main">
             <section id="mainAcceuil">
-                <h2>Lorem ipsum 1</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend, orci ac imperdiet condimentum, arcu odio porttitor est, ut sollicitudin massa purus a urna. Vestibulum sodales commodo mi a posuere. Aliquam auctor magna vehicula fermentum vulputate. Aliquam vel tempus quam. Donec vel gravida neque. Praesent sollicitudin, libero nec tristique pharetra, nisl nibh tempus justo, quis mollis dolor augue nec neque. Duis molestie condimentum enim, id convallis massa auctor vitae. Duis eu eros id dolor vulputate porta ac at leo. Maecenas orci dui, mollis vitae metus non, lobortis feugiat nunc. Nunc gravida mi nec mauris fringilla, id tristique nibh dictum. Quisque sagittis augue enim, sed feugiat quam molestie cursus. Proin vitae libero libero. Etiam condimentum erat ut ex iaculis, id euismod erat bibendum. Etiam non iaculis leo. Etiam viverra scelerisque laoreet. </p>
+                <h2>TASSTAITIDN</h2>
+                <p>Notre site de voyages mystères tout compris vous offre l'opportunité de vivre une expérience unique en vous emmenant dans des destinations inconnues et fascinantes. Nous avons conçu ce site pour ceux qui cherchent à sortir de leur zone de confort et à découvrir de nouveaux horizons sans avoir à se soucier de la planification et de l'organisation</p>
+                <p> Notre concept est simple: vous choisissez la direction que vous souhaitez prendre (nord, sud, est ou ouest), ainsi qu'une fourchette de distance (100 à 300 km, 300 à 1000 km, etc.), et nous nous occupons du reste. Nous planifions le vol, le transport terrestre, l'hébergement et les activités pour vous offrir une expérience inoubliable.</p>
+                <p>Nos destinations mystères sont choisies avec soin pour vous offrir une expérience unique et authentique. Nous travaillons en étroite collaboration avec les agences de voyage locales pour vous garantir une immersion totale dans la culture et les traditions de chaque destination.</p>
+                <p>De plus, nous avons à cœur de proposer des voyages tout compris pour que vous puissiez profiter pleinement de votre expérience sans avoir à vous soucier des coûts supplémentaires. Nous prenons en charge tous les frais, y compris les billets d'avion, l'hébergement, la nourriture et les activités.</p>
+                <p>Enfin, notre équipe dévouée est disponible 24h/24 et 7j/7 pour répondre à toutes vos questions et vous aider à planifier votre voyage mystère en toute tranquillité d'esprit.</p>
+                <p>Rejoignez-nous dès maintenant et laissez-vous surprendre par nos destinations mystères tout compris!</p>
+                <p></p>
+               
             </section>
         </section>
         <footer id="Footer">
