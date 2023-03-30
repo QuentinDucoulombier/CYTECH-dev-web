@@ -1,9 +1,14 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="../css/style.css" />
-        <title>Blog Random</title>
+        <title>TASSTAITIDN</title>
+        <link rel="icon" type="image/png" href="../img/testlogo.png"/>
     </head>
     <body>
         <header id="Header">

@@ -1,9 +1,13 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="../css/style.css" />
-        <title>Blog Random</title>
+        <title>TASSTAITIDN</title>
+        <link rel="icon" type="image/png" href="../img/testlogo.png"/>
         <script type="text/javascript" src="../js/scriptForm.js"></script>
     </head>
     <body>
@@ -16,7 +20,7 @@
         <section id="MainF">
             <section id="mainContact">
                 <!--TODO: Dans un premier temps il faut aller dans verifyForm.php pour ensuite rediriger-->
-                <form action="./sendEmail.php" method="post" onsubmit="return validateForm()">
+                <form action="./verifyForm.php" method="post" onsubmit="return validateForm()">
                     <label for="nom">Nom</label>
                     <input type="text" id="nom" name="nom" required="required">
                     <span id="nomFormat" style="display:none;color:red;">(Format incorrect)</span>

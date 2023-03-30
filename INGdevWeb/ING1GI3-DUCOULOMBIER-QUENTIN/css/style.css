@@ -175,6 +175,10 @@ table .add-to-cart:hover {
   padding: 10px;
   text-align: center;
   margin-top: 5%;
+  position:absolute;
+  bottom: 0;
+  left:0;
+  right: 0;
 }
 
 #Footer p {
