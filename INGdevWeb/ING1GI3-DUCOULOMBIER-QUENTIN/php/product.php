@@ -23,24 +23,64 @@
         <section id="Main">
             <section id="Formulaire">
                 <?php
-                    //echo $_GET['cat'];
+                    $jsonfile = '../data/json/products.json';
+                    $jsonString = file_get_contents($jsonfile);
+                    $jsonData = json_decode($jsonString, true);
+                    $distance;
                     switch ($_GET['cat']) {
                         case 1:
-                            include "products/100km.php";
+                            $distance = "100km";
                             break;
                         case 2:
-                            include "products/1000km.php";
+                            $distance = "1000km";
                             break;
                         case 3:
-                            include "products/5000km.php";
+                            $distance = "5000km";
                             break;
                         case 4:
-                            include "products/10000km.php";
+                            $distance = "10000km";
                             break;
                         default:
-                            include "products/100km.php";
-                            break;
+                            $distance = "100km";
+                        break;
                     }
+                    echo '
+                    <p></p>
+                    <h2>'.$jsonData[$distance]["distance"].'</h2>
+                    <table>
+                        <thead>
+                            <th>Direction</th>
+                            <th>Description</th>
+                            <th>Prix</th>
+                            <th class="stock">Stock</th>
+                            <th>Commande</th>
+                            <th>Photo</th>
+                        </thead>
+                        <tbody>';
+                            for ($i=0; $i < 4; $i++) { 
+                                echo '
+                                    <tr>
+                                        <td>'.$jsonData[$distance]["produits".$i]["direction"].'</td>
+                                        <td>'.$jsonData[$distance]["produits".$i]["Description"].'</td>
+                                        <td>'.$jsonData[$distance]["produits".$i]["Prix"].'</td>
+                                        <!--Je sais que data-direction cest pas vrmt fait pour ca mais cest quand meme style dans mon cas-->
+                                        <td class="stock" data-direction="'.$jsonData[$distance]["produits".$i]["direction"].'">'.$jsonData[$distance]["produits".$i]["Stock"].'</td>
+                                        <td>
+                                            <button type="button" class="minus" data-direction="'.$jsonData[$distance]["produits".$i]["direction"].'">-</button>
+                                            <input type="text" readonly class="quantity" value="0"/>
+                                            <button type="button" class="plus" data-direction="'.$jsonData[$distance]["produits".$i]["direction"].'">+</button>
+                                            
+                                            <p></p>
+                                            <button type="button" class="add-to-cart" data-direction="'.$jsonData[$distance]["produits".$i]["direction"].'">Ajouter au panier</button>
+                                        </td>
+                                        <td><img src="'.$jsonData[$distance]["produits".$i]["Photo"].'" alt="Boussole vers le '.$jsonData[$distance]["produits".$i]["direction"].'" class="imgIll"  \></td>
+                                    </tr>
+                                ';
+                            }
+                    echo '        
+                        </tbody>
+                    </table>
+                    ';
                     
                 ?>
                 

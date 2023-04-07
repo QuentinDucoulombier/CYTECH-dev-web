@@ -11,6 +11,6 @@ echo
     <li id="menuHor"><a href="product.php?cat=4">5 000-10 000 km</a></li>
     <li id="menuHor"><a href="product.php">plus de 10 000 km</a></li>
     <li id="menuHor"><a href="formulaire.php">Contact</a></li>
+    <li id="menuHor"><a href="connexion.php">Votre profil</a></li>
 </ul>';
-
 ?>
