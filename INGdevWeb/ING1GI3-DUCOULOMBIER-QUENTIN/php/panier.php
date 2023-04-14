@@ -1,5 +1,12 @@
 <?php
+    /**TODO:
+     * Cree un truc pour clear le panier 
+     * Cree un switch pour la distance
+     * 
+     * 
+     */
     session_start();    
+    
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -12,10 +19,54 @@
   
 </head>
 <body>
-    <?php
-    echo "<h1>BIENVENUE ". $_SESSION["prenom"];
+    <header id="Header">
+        <?php include 'header.php'; ?>
+    </header>
+    <section id="Menu">
+        <?php include 'menu.php'; ?>
+    </section>
+    <section id="Main">
+       
+        <?php
+            echo "<h1>BIENVENUE ". $_SESSION["prenom"]."</h1>";
+            echo '
+            <table>
+                <thead>
+                    <th>Produits</th>
+                    <th>Quantité</th>
+                    <th>Prix unitaire</th>
+                    <th>Prix total</th>
+                </thead>
+                <tbody>
+            ';
+            $panier = $_SESSION["panier"];
+            $prixPanier = 0;
+            foreach ($panier as $produit) {
+                $prixPanier += $produit['prixTotal'];
+                echo '
+                    <tr>
+                        <td>'.$produit['distance'] ." vers ". $produit['direction'].'</td>
+                        <td>'. $produit['quantite'] .'</td>
+                        <td>'. $produit['prix'] . " €".'</td>
+                        <td>'. $produit['prixTotal'] . " €".'</td>
+                    </tr>
+                ';
+            }
+            echo '
+                    <tr>
+                        <td><strong>Prix Total</strong></td>
+                        <td></td>
+                        <td></td>
+                        <td><strong>'.$prixPanier . " €".'</strong></td>
+                </tbody>
+            </table>';
+        ?>
 
-    ?>
+        
+    </section>
+    <footer id="Footer">
+        <?php include 'footer.php'; ?>
+    </footer>
     
 </body>
 </html>

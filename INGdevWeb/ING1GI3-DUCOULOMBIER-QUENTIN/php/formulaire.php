@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="../css/style.css" />
         <title>TASSTAITIDN</title>
         <link rel="icon" type="image/png" href="../img/testlogo.png"/>
-        <script type="text/javascript" src="../js/scriptForm.js"></script>
+        <!--<script type="text/javascript" src="../js/scriptForm.js"></script>-->
     </head>
     <body>
         <header id="Header">
@@ -19,7 +19,6 @@
         </section>
         <section id="MainF">
             <section id="mainContact">
-                <!--TODO: Dans un premier temps il faut aller dans verifyForm.php pour ensuite rediriger-->
                 <form action="./verifyForm.php" method="post" onsubmit="return validateForm()">
                     <label for="nom">Nom</label>
                     <input type="text" id="nom" name="nom" required="required">

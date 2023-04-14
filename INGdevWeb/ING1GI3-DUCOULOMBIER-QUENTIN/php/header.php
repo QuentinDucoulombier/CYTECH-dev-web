@@ -11,8 +11,8 @@
             <li id="menuHor"><a href="product.php?cat=2">300-1 000 km</a></li>
             <li id="menuHor"><a href="product.php?cat=3">1 000-5 000 km</a></li>
             <li id="menuHor"><a href="product.php?cat=4">5 000-10 000 km</a></li>
-            <li id="menuHor"><a href="product.php">plus de 10 000 km</a></li>
             <li id="menuHor"><a href="formulaire.php">Contact</a></li>
+            <li id="menuHor" class="panier"><a href="panier.php">🛒</a></li>
             <li id="menuHor"><a href="connexion.php">Connexion</a></li>
         </ul>';
     }
@@ -27,8 +27,8 @@
             <li id="menuHor"><a href="product.php?cat=2">300-1 000 km</a></li>
             <li id="menuHor"><a href="product.php?cat=3">1 000-5 000 km</a></li>
             <li id="menuHor"><a href="product.php?cat=4">5 000-10 000 km</a></li>
-            <li id="menuHor"><a href="product.php">plus de 10 000 km</a></li>
             <li id="menuHor"><a href="formulaire.php">Contact</a></li>
+            <li id="menuHor"><a href="panier.php">🛒</a></li>
             <li id="menuHor"><a href="panier.php">Votre profil</a></li>
             <form method="POST" action="./index.php">
             <input class="bouton" type="submit" name="OUT" value="Deconnexion"/>

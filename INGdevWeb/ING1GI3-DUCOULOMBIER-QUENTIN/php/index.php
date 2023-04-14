@@ -20,6 +20,7 @@
         <section id="Main">
             <section id="mainAcceuil">
                 <h2>TASSTAITIDN</h2>
+                
                 <p>Notre site de voyages mystères tout compris vous offre l'opportunité de vivre une expérience unique en vous emmenant dans des destinations inconnues et fascinantes. Nous avons conçu ce site pour ceux qui cherchent à sortir de leur zone de confort et à découvrir de nouveaux horizons sans avoir à se soucier de la planification et de l'organisation</p>
                 <p> Notre concept est simple: vous choisissez la direction que vous souhaitez prendre (nord, sud, est ou ouest), ainsi qu'une fourchette de distance (100 à 300 km, 300 à 1000 km, etc.), et nous nous occupons du reste. Nous planifions le vol, le transport terrestre, l'hébergement et les activités pour vous offrir une expérience inoubliable.</p>
                 <p>Nos destinations mystères sont choisies avec soin pour vous offrir une expérience unique et authentique. Nous travaillons en étroite collaboration avec les agences de voyage locales pour vous garantir une immersion totale dans la culture et les traditions de chaque destination.</p>
@@ -34,10 +35,9 @@
         <?php include 'footer.php'; ?>
         </footer>
         <?php
-        /*TODO:regarder a quoi ca correspond*/
-        if (isset($_POST["OUT"])){
-          session_destroy();
-        }
+            if (isset($_POST["OUT"])){
+            session_destroy();
+            }
         ?>
     </body>
 </html>

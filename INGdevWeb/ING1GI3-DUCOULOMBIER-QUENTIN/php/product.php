@@ -13,7 +13,7 @@
       
     </head>
     <body>
-        <!-- TODO automatiser tt ca en php-->
+        <!--  automatiser tt ca en php-->
         <header id="Header">
             <?php include 'header.php'; ?>  
         </header>
@@ -62,16 +62,23 @@
                                     <tr>
                                         <td>'.$jsonData[$distance]["produits".$i]["direction"].'</td>
                                         <td>'.$jsonData[$distance]["produits".$i]["Description"].'</td>
-                                        <td>'.$jsonData[$distance]["produits".$i]["Prix"].'</td>
+                                        <td>'.$jsonData[$distance]["produits".$i]["Prix"].' €</td>
                                         <!--Je sais que data-direction cest pas vrmt fait pour ca mais cest quand meme style dans mon cas-->
                                         <td class="stock" data-direction="'.$jsonData[$distance]["produits".$i]["direction"].'">'.$jsonData[$distance]["produits".$i]["Stock"].'</td>
                                         <td>
-                                            <button type="button" class="minus" data-direction="'.$jsonData[$distance]["produits".$i]["direction"].'">-</button>
-                                            <input type="text" readonly class="quantity" value="0"/>
-                                            <button type="button" class="plus" data-direction="'.$jsonData[$distance]["produits".$i]["direction"].'">+</button>
-                                            
-                                            <p></p>
-                                            <button type="button" class="add-to-cart" data-direction="'.$jsonData[$distance]["produits".$i]["direction"].'">Ajouter au panier</button>
+                                            <form method="POST" action="./ajoutPanier.php">
+                                                <button type="button" class="minus" data-direction="'.$jsonData[$distance]["produits".$i]["direction"].'">-</button>
+                                                <input type="text" name="quantite" readonly class="quantity" value="0"/>
+                                                <button type="button" class="plus" data-direction="'.$jsonData[$distance]["produits".$i]["direction"].'">+</button>
+                                                
+                                                <p></p>
+                                                <input type="hidden" name="cat" value="'.$_GET['cat'].'"/>
+                                                <input type="hidden" name="distance" value="'.$distance.'"/>
+                                                <input type="hidden" name="prix" value="'.$jsonData[$distance]["produits".$i]["Prix"].'"/>
+                                                <input type="hidden" name="direction" value="'.$jsonData[$distance]["produits".$i]["direction"].'"/>
+                                                <input class="add-to-cart" type="submit" name="panier" value="Ajouter au panier"/>
+                                            </form>
+                                           
                                         </td>
                                         <td><img src="'.$jsonData[$distance]["produits".$i]["Photo"].'" alt="Boussole vers le '.$jsonData[$distance]["produits".$i]["direction"].'" class="imgIll"  \></td>
                                     </tr>

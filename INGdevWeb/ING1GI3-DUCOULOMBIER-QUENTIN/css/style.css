@@ -142,7 +142,8 @@ table input:hover {
   background-color: #555;
 }
 
-table input {
+
+table input[type="text"]{
   width: 50px;
   text-align: center;
 }
@@ -165,7 +166,6 @@ table .add-to-cart:hover {
   transform: scale(1.8);
   transition: transform 0.5s;
 }
-
 
 /* Footer */
 

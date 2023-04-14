@@ -32,4 +32,30 @@ function hideStock()
     
 }
 
+/*
+function animationAjout() 
+{
+    document.getElementsByClassName('panier').className = 'panierAdd';
+}
+
+
+// Sélectionnez l'icône du panier
+const panierIcon = document.querySelector('.panier a');
+
+// Sélectionnez le formulaire
+const formulaire = document.querySelector('form');
+
+// Ajoutez un gestionnaire d'événements pour la soumission du formulaire
+formulaire.addEventListener('submit', (event) => {
+  // Empêchez le comportement par défaut du formulaire
+  event.preventDefault();
+  
+  // Ajoutez la classe "animate" à l'icône du panier
+  panierIcon.classList.add('animate');
+  
+  // Attendez que l'animation soit terminée, puis supprimez la classe "animate"
+  setTimeout(() => {
+    panierIcon.classList.remove('animate');
+  }, 100000);
+});*/
 

@@ -31,11 +31,7 @@ function killChild() {
       let child = document.getElementById("mySelect").children;
       let i = 0;
 
-      /*if('Les Sardines'==child[i].text)
-      {
-        myWindow.document.write("<h1>test</h1>");
-      }*/
-      //// TODO: faire mieux
+    
       console.log(child[i].text)
       switch(child[i].text) {
         case "Les Sardines":
