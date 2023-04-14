@@ -32,12 +32,7 @@
 
       </div>
 
-      <?php
-        /*TODO:regarder a quoi ca correspond*/
-        if (isset($_POST["OUT"])){
-          session_destroy();
-        }
-      ?>
+      
 
   </body>
 

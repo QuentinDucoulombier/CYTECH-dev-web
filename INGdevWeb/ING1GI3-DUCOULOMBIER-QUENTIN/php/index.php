@@ -33,5 +33,11 @@
         <footer id="Footer">
         <?php include 'footer.php'; ?>
         </footer>
+        <?php
+        /*TODO:regarder a quoi ca correspond*/
+        if (isset($_POST["OUT"])){
+          session_destroy();
+        }
+        ?>
     </body>
 </html>
