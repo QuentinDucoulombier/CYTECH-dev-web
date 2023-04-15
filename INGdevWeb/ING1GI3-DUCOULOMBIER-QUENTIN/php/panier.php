@@ -1,6 +1,6 @@
 <?php
     /**TODO:
-     * Cree un truc pour clear le panier 
+     * [x]Cree un truc pour clear le panier 
      * Cree un switch pour la distance
      * 
      * 
@@ -62,7 +62,9 @@
             </table>';
         ?>
 
-        
+        <form method="POST" action="./ajoutPanier.php">
+            <input class="bouton" type="submit" name="videPanier" value="Vider le panier"/>
+        </form>
     </section>
     <footer id="Footer">
         <?php include 'footer.php'; ?>

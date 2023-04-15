@@ -19,6 +19,10 @@
     $cMail = $_POST["cMail"];
     $metier = clean($_POST["metier"]);
     $genre = clean($_POST["Genre"]);
+    $errorNum = false;
+    $errorMail = false;
+    $errorDate = false;
+    $errorContMail = false;
 
     //Verif si c'est vide en gros
     $verif = !empty($nom) && !empty($prenom) && !empty($telephone) && !empty($email) && !empty($dReserva) && !empty($sMail) && !empty($cMail) && !empty($metier) && !empty($genre);
@@ -27,7 +31,8 @@
     $telFormat = "/^((\+)33|0)[1-9](\d{2}){4}$/";
     if (!preg_match($telFormat, $telephone)) {
         $verif = false;
-        echo "Num";
+        $errorNum = true;
+        
 
     }
 
@@ -35,8 +40,7 @@
     $emailFormat = "/^\S+@\S+\.\S+$/";
     if (!preg_match($emailFormat, $email)) {
         $verif = false;
-        echo "mail";
-
+        $errorMail = true;
     }
 
     // Date de réservation
@@ -45,25 +49,21 @@
     $now = new DateTime();
     if (!$dateReserv || $dateReserv < $now) {
         $verif = false;
-        echo "Date";
+        $errorDate = true;
 
     }
 
     // Vérification du contenu du mail
     if ($cMail == "Veuillez saisir le sujet du mail.") {
         $verif = false;
-        echo "ContenuMail";
+        $errorContMail = true;
     }
 
     // Si toutes les vérifications sont passées, le formulaire est envoyé
     if ($verif) {
-        header('Location:sendEmail.php');
-        
+        header('Location: sendEmail.php?nom=' . urlencode($_POST["nom"]) . '&prenom=' . urlencode($_POST["prenom"]) . '&Telephone=' . urlencode($_POST["Telephone"]) . '&Email=' . urlencode($_POST["Email"]) . '&dReserva=' . urlencode($_POST["dReserva"]) . '&sMail=' . urlencode($_POST["sMail"]) . '&cMail=' . urlencode($_POST["cMail"]) . '&metier=' . urlencode($_POST["metier"]) . '&Genre=' . urlencode($_POST["Genre"]));
     } else {
-        // Affichage d'un message d'erreur
-        //TODO:Bien renvoye avec un get ;(
-
-        echo "<h1>Une erreur est survenue lors de la soumission du formulaire.</h1>";
+        header('Location: formulaire.php?nom=' . urlencode($_POST["nom"]) . '&prenom=' . urlencode($_POST["prenom"]) . '&Telephone=' . urlencode($_POST["Telephone"]) . '&Email=' . urlencode($_POST["Email"]) . '&dReserva=' . urlencode($_POST[""]) . '&sMail=' . urlencode($_POST["sMail"]) . '&cMail=' . urlencode($_POST["cMail"]) . '&errorNum=' . $errorNum . '&errorMail=' . $errorMail . '&errorDate=' . $errorDate . '&errorContMail=' . $errorContMail);
     }
 
 ?>

@@ -21,25 +21,61 @@
             <section id="mainContact">
                 <form action="./verifyForm.php" method="post" onsubmit="return validateForm()">
                     <label for="nom">Nom</label>
-                    <input type="text" id="nom" name="nom" required="required">
+                    <?php
+                        echo '<input type="text" id="nom" name="nom" value="'.$_GET['nom'].'" required="required">';
+                    ?>
                     <span id="nomFormat" style="display:none;color:red;">(Format incorrect)</span>
                     <label for="prenom">Prénom</label>
-                    <input type="text" id="prenom" name="prenom" required="required">
+                    <?php
+                        echo '<input type="text" id="prenom" name="prenom" value="'.$_GET['prenom'].'" required="required">';
+                    ?>
                     <span id="prenomFormat" style="display:none;color:red;">(Format incorrect)</span>
                     <label for="Telephone">Numero de Telephone</label>
-                    <input type="tel" id="Telephone" name="Telephone" required="required">
+                    <?php
+                        echo '<input type="tel" id="Telephone" name="Telephone" value="'.$_GET['Telephone'].'" required="required">';
+                    
+                        if($_GET['errorNum']) {
+                            echo '<span id="TelephoneFormat" style="color:red;">(Format incorrect: format francais)</span>';
+                        }
+                    ?>
                     <span id="TelephoneFormat" style="display:none;color:red;">(Format incorrect: format francais)</span>
                     <label for="Email">Email</label>
-                    <input type="email" id="Email" name="Email" />
+                    <?php
+                        echo '<input type="email" id="Email" name="Email" value="'.$_GET['Email'].'"/>';
+                    
+                        if ($_GET['errorMail']) {
+                            echo '<span id="EmailFormat" style="color:red;">(Format incorrect: format@site.adresse)</span>';
+                        }
+                    ?>
                     <span id="EmailFormat" style="display:none;color:red;">(Format incorrect: format@site.adresse)</span>
                     <label for="dReserva">Date de reservation</label>
-                    <input type="date" id="dReserva" name="dReserva" required="required">
+                    <?php
+                        echo '<input type="date" id="dReserva" name="dReserva"  value="'.$_GET['dReserva'].'" required="required">';
+                    
+                        if ($_GET['errorDate']) {
+                            echo '<span id="dReservaFormat" style="color:red;">(Format incorrect: Date dans le passé)</span>';
+                        }
+                    ?>
                     <span id="dReservaFormat" style="display:none;color:red;">(Format incorrect: Date dans le passé)</span>
                     <label for="sMail">Sujet du mail</label>
-                    <input type="text" id="sMail" name="sMail"  required="required">
+                    <?php
+                       echo '<input type="text" id="sMail" name="sMail" value="'.$_GET['sMail'].'" required="required">';
+                    ?>
                     <span id="sMailFormat" style="display:none;color:red;">(Format incorrect)</span>
                     <label for="cMail">Contenu du mail</label>
-                    <textarea id="cMail" name="cMail" rows="4">Veuillez saisir le sujet du mail.</textarea>
+                    <?php
+                        if(!isset($_GET['sMail']))
+                        {
+                            $_GET['sMail'] = "Veuillez saisir le sujet du mail.";
+                        }
+                        echo '<textarea id="cMail" name="cMail" rows="4">'.$_GET['sMail'].'</textarea>';
+                    
+                    ?>
+                    <?php
+                        if ($_GET['errorContMail']) {
+                            echo '<span id="cMail" style="color:red;">(Veuillez modifier le sujet du mail)</span>';
+                        }
+                    ?>
                     <label for=metier>Metiers</label>
                     <select name="metier" id="metier" required="required">
                         <option value="">-- Liste de metiers ^^ --</option>
@@ -62,7 +98,7 @@
             </section>
         </section>
         
-        <footer id="Footer">
+        <footer id="FooterF">
             <?php include 'footer.php'; ?>
         </footer>
     </body>

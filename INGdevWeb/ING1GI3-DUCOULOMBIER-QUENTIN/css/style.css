@@ -28,7 +28,7 @@ body {
   display: flex;
 }
 
-#Header ul li {
+#Header ul li{
   margin: 0 10px;
 }
 
@@ -39,11 +39,23 @@ body {
   border-radius: 5px;
 }
 
-#Header ul li a:hover {
+#Header ul li a:hover, #Header .boutonDeco:hover{
   background-color: #fff;
   color: #333;
 }
 
+
+
+.boutonDeco {
+  font-size: 16px;
+  padding: 1px 7px;
+  border: none;
+  background-color: #480d0d;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  
+}
 
 /* Menu */
 #Menu {
@@ -125,7 +137,7 @@ table .imgIll {
 }
 
 /* Formulaire de commande */
-table button, table input {
+table button, table input, .bouton {
   font-size: 16px;
   padding: 5px 10px;
   border: none;
@@ -181,9 +193,18 @@ table .add-to-cart:hover {
   right: 0;
 }
 
-#Footer p {
+#Footer p,
+#FooterF p {
   margin: 0;
   font-size: 14px;
+}
+
+#FooterF {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  margin-top: 5%;
 }
 
 /* Formulaire */

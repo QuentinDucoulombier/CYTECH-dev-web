@@ -10,10 +10,13 @@
 
     </head>
     <body>
+      <header id="Header">
+        <?php include 'header.php'; ?>
+      </header>
 
       <div class="form">
-        <h1>Inscrivez-vous</h1>
-        <form action="../php/enregistrer.php" method="POST">
+        <h1 id="titre">Inscrivez-vous</h1>
+        <form action="./enregistrer.php" method="POST">
           <div class="input-container ic2">
             <input type="text" name="prenom" id="prenom" class="input" placeholder=" " required/>
             <div class="cut"></div>
@@ -25,7 +28,7 @@
               <label for="nom" class="placeholder">Nom*</label>
             </div>
             <div class="input-container ic2">
-              <input  input type="email" id="email" name="email" size="30" class="input" placeholder=" " required/>
+              <input type="email" id="email" name="email" size="30" class="input" placeholder=" " required/>
               <div class="cut"></div>
               <label for="email" class="placeholder">Email*</label>
             </div>
