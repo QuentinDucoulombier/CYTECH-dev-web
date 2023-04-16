@@ -1,5 +1,3 @@
-<!--TODO: Rajouter le fait de pouvoir voir le mdp (ca prend 10 sec en js type=pasword devient texte)-->
-
 <!DOCTYPE html>
 <html>
     <head>

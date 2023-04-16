@@ -1,10 +1,4 @@
 <?php
-    /**TODO:
-     * [x]Cree un truc pour clear le panier 
-     * Cree un switch pour la distance
-     * 
-     * 
-     */
     session_start();    
     
 ?>
@@ -45,7 +39,7 @@
                 $prixPanier += $produit['prixTotal'];
                 echo '
                     <tr>
-                        <td>'.$produit['distance'] ." vers ". $produit['direction'].'</td>
+                        <td>'.$produit['description'] ." vers ". $produit['direction'].'</td>
                         <td>'. $produit['quantite'] .'</td>
                         <td>'. $produit['prix'] . " €".'</td>
                         <td>'. $produit['prixTotal'] . " €".'</td>

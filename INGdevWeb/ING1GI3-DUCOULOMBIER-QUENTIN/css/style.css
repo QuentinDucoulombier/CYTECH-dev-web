@@ -248,7 +248,7 @@ table .add-to-cart:hover {
   margin-top: 2%;
 }
 
-#mainContact input[type="submit"]:hover, #hideStocks:hover {
+#mainContact input[type="submit"]:hover, #hideStocks:hover, .bouton:hover {
   background-color: #fff;
   color: #333;
 }

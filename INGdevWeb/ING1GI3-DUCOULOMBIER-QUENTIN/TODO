@@ -18,9 +18,9 @@ Amelioration perso
 [x]Mail
 [x]login
 [x]Verif Mail
-[]td
-[]Peut etre pp
+[x]td
+[/]Peut etre pp
 []Client peut modifier ces login
-[]Faire que les input du form de la commande sois au milieu
+[/]Faire que les input du form de la commande sois au milieu
 [x]Regarder si cest possible de prendre les get pour aller sur la meme page
-[]Faire que lon ne peut pas ajouter plus darticles quil y en a dans le stock
+[x]Faire que lon ne peut pas ajouter plus darticles quil y en a dans le stock

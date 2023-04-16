@@ -13,7 +13,6 @@
       
     </head>
     <body>
-        <!--  automatiser tt ca en php-->
         <header id="Header">
             <?php include 'header.php'; ?>  
         </header>
@@ -46,7 +45,7 @@
                     }
                     echo '
                     <p></p>
-                    <h2>'.$jsonData[$distance]["distance"].'</h2>
+                    <h2>De '.$jsonData[$distance]["distance"].'</h2>
                     <table>
                         <thead>
                             <th>Direction</th>
@@ -72,7 +71,9 @@
                                                 <button type="button" class="plus" data-direction="'.$jsonData[$distance]["produits".$i]["direction"].'">+</button>
                                                 
                                                 <p></p>
+                                                <input type="hidden" name="description" value="'.$jsonData[$distance]["distance"].'"/>
                                                 <input type="hidden" name="cat" value="'.$_GET['cat'].'"/>
+                                                <input type="hidden" name="stock" value="'.$jsonData[$distance]["produits".$i]["Stock"].'"/>
                                                 <input type="hidden" name="distance" value="'.$distance.'"/>
                                                 <input type="hidden" name="prix" value="'.$jsonData[$distance]["produits".$i]["Prix"].'"/>
                                                 <input type="hidden" name="direction" value="'.$jsonData[$distance]["produits".$i]["direction"].'"/>

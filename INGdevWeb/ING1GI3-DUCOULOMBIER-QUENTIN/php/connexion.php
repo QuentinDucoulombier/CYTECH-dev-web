@@ -7,7 +7,7 @@
         <meta charset="utf-8">
         <title>Connexion</title>
         <link rel="stylesheet" type="text/css" href="../css/inscription.css"/>
-        <link rel="icon" type="image/png" href="favicon.png"/>
+        <link rel="icon" type="image/png" href="../img/testlogo.png"/>
 
     </head>
     <body>
