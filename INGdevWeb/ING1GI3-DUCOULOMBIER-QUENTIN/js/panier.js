@@ -17,6 +17,8 @@ plusButtons.forEach(button => {
 
     let currentQuantity = parseInt(quantity.value);
     currentQuantity++;
+    /*let currentStock = parseInt(stock.valueOf);
+    currentStock--;*/
 
     quantity.value = currentQuantity;
     if (currentQuantity >= stock) {

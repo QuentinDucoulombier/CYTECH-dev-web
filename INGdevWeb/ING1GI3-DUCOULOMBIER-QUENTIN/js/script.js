@@ -59,3 +59,39 @@ formulaire.addEventListener('submit', (event) => {
   }, 100000);
 });*/
 
+function fonction(operation){
+
+
+    const direction = button.getAttribute("data-direction");
+    const stock = parseInt(document.querySelector(`tr td.stock[data-direction="${direction}"]`).textContent);
+    console.log(stock);
+
+
+    xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function() {
+
+            if (this.readyState == 4 && this.status == 200)
+            {
+                //console.log(this.responseText);
+                document.getElementsByClassName("stock").innerHTML = this.responseText;
+
+            }
+
+
+        };
+
+        xhttp.open("POST", "updatePanier.php", true);
+        xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhttp.send("quantite="+stock+"operation"+operation);
+
+}
+
+function plus() {
+
+    fonction(true);
+}
+
+function moins() {
+    fonction(false);
+}

@@ -10,7 +10,6 @@
         <title>TASSTAITIDN</title>
         <link rel="icon" type="image/png" href="../img/testlogo.png"/>
         <script type="text/javascript" src="../js/script.js"></script>
-      
     </head>
     <body>
         <header id="Header">
@@ -79,9 +78,9 @@
                             <td class="stock" data-direction="'.$row["direction"].'">'.$row["stock"].'</td>
                             <td>
                                 <form method="POST" action="./ajoutPanier.php">
-                                    <button type="button" class="minus" data-direction="'.$row["direction"].'">-</button>
+                                    <button type="button" class="minus" data-direction="'.$row["direction"].'" onclick=moins()>-</button>
                                     <input type="text" name="quantite" readonly class="quantity" value="0"/>
-                                    <button type="button" class="plus" data-direction="'.$row["direction"].'">+</button>
+                                    <button type="button" class="plus" data-direction="'.$row["direction"].'" onclick=plus()>+</button>
                                     
                                     <p></p>
                                     <input type="hidden" name="description" value="'.$distance.'"/>
