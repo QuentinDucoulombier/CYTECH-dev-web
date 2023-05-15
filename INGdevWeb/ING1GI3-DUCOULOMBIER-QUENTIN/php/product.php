@@ -20,82 +20,92 @@
             <?php include 'menu.php'; ?>
         </section>
         <section id="Main">
-            <section id="Formulaire">
-                <?php
-                    $jsonfile = '../data/json/products.json';
-                    $jsonString = file_get_contents($jsonfile);
-                    $jsonData = json_decode($jsonString, true);
-                    $distance;
-                    switch ($_GET['cat']) {
-                        case 1:
-                            $distance = "100km";
-                            break;
-                        case 2:
-                            $distance = "1000km";
-                            break;
-                        case 3:
-                            $distance = "5000km";
-                            break;
-                        case 4:
-                            $distance = "10000km";
-                            break;
-                        default:
-                            $distance = "100km";
-                        break;
-                    }
-                    echo '
-                    <p></p>
-                    <h2>De '.$jsonData[$distance]["distance"].'</h2>
-                    <table>
-                        <thead>
-                            <th>Direction</th>
-                            <th>Description</th>
-                            <th>Prix</th>
-                            <th class="stock">Stock</th>
-                            <th>Commande</th>
-                            <th>Photo</th>
-                        </thead>
-                        <tbody>';
-                            for ($i=0; $i < 4; $i++) { 
-                                echo '
-                                    <tr>
-                                        <td>'.$jsonData[$distance]["produits".$i]["direction"].'</td>
-                                        <td>'.$jsonData[$distance]["produits".$i]["Description"].'</td>
-                                        <td>'.$jsonData[$distance]["produits".$i]["Prix"].' €</td>
-                                        <!--Je sais que data-direction cest pas vrmt fait pour ca mais cest quand meme style dans mon cas-->
-                                        <td class="stock" data-direction="'.$jsonData[$distance]["produits".$i]["direction"].'">'.$jsonData[$distance]["produits".$i]["Stock"].'</td>
-                                        <td>
-                                            <form method="POST" action="./ajoutPanier.php">
-                                                <button type="button" class="minus" data-direction="'.$jsonData[$distance]["produits".$i]["direction"].'">-</button>
-                                                <input type="text" name="quantite" readonly class="quantity" value="0"/>
-                                                <button type="button" class="plus" data-direction="'.$jsonData[$distance]["produits".$i]["direction"].'">+</button>
-                                                
-                                                <p></p>
-                                                <input type="hidden" name="description" value="'.$jsonData[$distance]["distance"].'"/>
-                                                <input type="hidden" name="cat" value="'.$_GET['cat'].'"/>
-                                                <input type="hidden" name="stock" value="'.$jsonData[$distance]["produits".$i]["Stock"].'"/>
-                                                <input type="hidden" name="distance" value="'.$distance.'"/>
-                                                <input type="hidden" name="prix" value="'.$jsonData[$distance]["produits".$i]["Prix"].'"/>
-                                                <input type="hidden" name="direction" value="'.$jsonData[$distance]["produits".$i]["direction"].'"/>
-                                                <input class="add-to-cart" type="submit" name="panier" value="Ajouter au panier"/>
-                                            </form>
-                                           
-                                        </td>
-                                        <td><img src="'.$jsonData[$distance]["produits".$i]["Photo"].'" alt="Boussole vers le '.$jsonData[$distance]["produits".$i]["direction"].'" class="imgIll"  \></td>
-                                    </tr>
-                                ';
-                            }
-                    echo '        
-                        </tbody>
-                    </table>
-                    ';
-                    
-                ?>
-                
+        <section id="Formulaire">
+            <?php
+                $serveur = "localhost";
+                $user = "quentin";
+                $pass = "*noeDu64*";
+                $dbname = "voyages";
+                $cnx = mysqli_connect($serveur, $user, $pass, $dbname);
 
+                if (mysqli_connect_errno($cnx)) {
+                    echo "Erreur de connexion à MySQL: " . mysqli_connect_error();
+                    exit();
+                }
+
+                $distance;
+                switch ($_GET['cat']) {
+                    case 1:
+                        $distance = "100 à 300 km";
+                        break;
+                    case 2:
+                        $distance = "300 à 1 000 km";
+                        break;
+                    case 3:
+                        $distance = "1 000 à 5 000 km";
+                        break;
+                    case 4:
+                        $distance = "5 000 à 10 000 km";
+                        break;
+                    default:
+                        $distance = "100 à 300 km";
+                    break;
+                }
+
+                echo '
+                <p></p>
+                <h2>De '.$distance.'</h2>
+                <table>
+                    <thead>
+                        <th>Direction</th>
+                        <th>Description</th>
+                        <th>Prix</th>
+                        <th class="stock">Stock</th>
+                        <th>Commande</th>
+                        <th>Photo</th>
+                    </thead>
+                    <tbody>';
+                $dbname = "voyages";
+                mysqli_select_db($cnx, $dbname);
+                $query = "SELECT * FROM produits WHERE distance = '$distance' LIMIT 4";
+                $result = mysqli_query($cnx, $query);
+
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo '
+                        <tr>
+                            <td>'.$row["direction"].'</td>
+                            <td>'.$row["description"].'</td>
+                            <td>'.$row["prix"].' €</td>
+                            <td class="stock" data-direction="'.$row["direction"].'">'.$row["stock"].'</td>
+                            <td>
+                                <form method="POST" action="./ajoutPanier.php">
+                                    <button type="button" class="minus" data-direction="'.$row["direction"].'">-</button>
+                                    <input type="text" name="quantite" readonly class="quantity" value="0"/>
+                                    <button type="button" class="plus" data-direction="'.$row["direction"].'">+</button>
+                                    
+                                    <p></p>
+                                    <input type="hidden" name="description" value="'.$distance.'"/>
+                                    <input type="hidden" name="cat" value="'.$_GET['cat'].'"/>
+                                    <input type="hidden" name="stock" value="'.$row["stock"].'"/>
+                                    <input type="hidden" name="distance" value="'.$distance.'"/>
+                                    <input type="hidden" name="prix" value="'.$row["prix"].'"/>
+                                    <input type="hidden" name="direction" value="'.$row["direction"].'"/>
+                                    <input class="add-to-cart" type="submit" name="panier" value="Ajouter au panier"/>
+                                </form>
+                                            
+                            </td>
+                            <td><img src="'.$row["photo"].'" alt="Boussole vers le '.$row["direction"].'" class="imgIll"  \></td>
+                        </tr>
+                    ';
+                }
+
+                echo '</tbody>
+                </table>';
                 
-                
-            </section>
+                mysqli_close($cnx);
+            ?>
+        </section>
+
             <button type="button" id="hideStocks" onclick="hideStock()">Cacher stock</button>
             <p></p>
         </section>
