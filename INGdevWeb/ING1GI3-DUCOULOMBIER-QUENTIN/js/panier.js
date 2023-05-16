@@ -17,11 +17,10 @@ plusButtons.forEach(button => {
 
     let currentQuantity = parseInt(quantity.value);
     currentQuantity++;
-    /*let currentStock = parseInt(stock.valueOf);
-    currentStock--;*/
+    
 
     quantity.value = currentQuantity;
-    if (currentQuantity >= stock) {
+    if (stock == 1) {
       button.disabled = true;
     }
     

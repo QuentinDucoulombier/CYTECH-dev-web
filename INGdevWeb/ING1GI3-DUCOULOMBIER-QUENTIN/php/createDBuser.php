@@ -9,7 +9,7 @@ if (mysqli_connect_errno($cnx)) {
     exit();
 }
 
-$dbname = "voyages";
+$dbname = "utilisateur";
 
 $queryDestroyDB = "DROP DATABASE IF EXISTS $dbname";
 if (mysqli_query($cnx, $queryDestroyDB)) {
@@ -30,39 +30,35 @@ if (mysqli_query($cnx, $queryCreateDB)) {
 mysqli_select_db($cnx, $dbname);
 
 // Création de la table
-$queryCreateTable = "CREATE TABLE produits (
+$queryCreateTable = "CREATE TABLE user (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    distance VARCHAR(255),
-    direction VARCHAR(255),
-    description TEXT,
-    prix DECIMAL(10,2),
-    stock INT,
-    photo VARCHAR(255)
+    prenom VARCHAR(255),
+    nom VARCHAR(255),
+    email VARCHAR(255),
+    pseudo VARCHAR(255),
+    mdp VARCHAR(255),
+    statut VARCHAR(255)
 )";
 if (mysqli_query($cnx, $queryCreateTable)) {
-    echo "Table 'produits' créée avec succès.";
+    echo "Table 'user' créée avec succès.";
 } else {
     echo "Erreur lors de la création de la table 'produits' : " . mysqli_error($cnx);
 }
+$fichier = "../data/csv/login.csv";
+$cpt = 0;
+if (($handle = fopen($fichier, "r")) !== FALSE) {
+    while (($data = fgetcsv($handle, 1024, ";")) !== FALSE) {
 
-// Chemin vers le fichier JSON
-$jsonFile = "../data/json/products.json";
-$jsonData = file_get_contents($jsonFile);
-$data = json_decode($jsonData, true);
+        if($cpt != 0) {     
+            $prenom = mysqli_real_escape_string($cnx, $data[0]);
+            $nom = mysqli_real_escape_string($cnx, $data[1]);
+            $email = mysqli_real_escape_string($cnx, $data[2]);
+            $pseudo = mysqli_real_escape_string($cnx, $data[3]);
+            $password = mysqli_real_escape_string($cnx, $data[4]);
+            $statut = mysqli_real_escape_string($cnx, $data[5]);
 
-// Parcours des données et insertion dans la base de données
-foreach ($data as $key => $value) {
-    $distance = mysqli_real_escape_string($cnx, $value['distance']);
-    foreach ($value as $subKey => $subValue) {
-        if (strpos($subKey, 'produits') === 0) {
-            $direction = mysqli_real_escape_string($cnx, $subValue['direction']);
-            $description = mysqli_real_escape_string($cnx, $subValue['Description']);
-            $prix = mysqli_real_escape_string($cnx, $subValue['Prix']);
-            $stock = mysqli_real_escape_string($cnx, $subValue['Stock']);
-            $photo = mysqli_real_escape_string($cnx, $subValue['Photo']);
-            
-            $query = "INSERT INTO produits (distance, direction, description, prix, stock, photo) 
-                      VALUES ('$distance', '$direction', '$description', '$prix', '$stock', '$photo')";
+            $query = "INSERT INTO user (prenom, nom, email, pseudo, mdp, statut) 
+                    VALUES ('$prenom', '$nom', '$email', '$pseudo', '$password', '$statut')";
             
             if (mysqli_query($cnx, $query)) {
                 echo "Enregistrement inséré avec succès.";
@@ -70,7 +66,9 @@ foreach ($data as $key => $value) {
                 echo "Erreur lors de l'insertion de l'enregistrement : " . mysqli_error($cnx);
             }
         }
+        $cpt++;
     }
+    fclose($handle);
 }
 
 mysqli_close($cnx);

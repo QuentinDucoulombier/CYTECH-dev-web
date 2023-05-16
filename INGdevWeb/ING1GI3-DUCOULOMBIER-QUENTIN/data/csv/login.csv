@@ -1,2 +1,3 @@
-Prenom;Nom;Email;pseudo;mdp
-Quentin;Ducoulombier;ducoulombi@cy-tech.fr;admin;$2y$10$/PBGsfK/PAWBbcbEvVCx3Om26jfOS.p8S3pQD2N7nKMrK.ii8W3N.
+Prenom;Nom;Email;pseudo;mdp;statut
+Christophe;Dauphin;admin@cy-tech.fr;admin;$2y$10$AjQorhZLgPNp85BV1kWAquRvIsZGwHwLZUlD4zIXkhyj5d2EHRYfi;admin
+Quentin;Ducoulombier;ducoulombi@cy-tech.fr;Quentin;$2y$10$0mdTmtTSMTVu509VEG40yOv9zZVbzLWEcUf.TWltU5uWAFQG.AAPe;client

@@ -32,6 +32,14 @@ function hideStock()
     
 }
 
+function hideStock2() {
+    let stock = document.getElementsByClassName("stock");
+
+    for (let i = 0; i < stock.length; i++) {
+        stock[i].style.display = "none";  
+    }  
+}
+
 /*
 function animationAjout() 
 {
@@ -59,12 +67,11 @@ formulaire.addEventListener('submit', (event) => {
   }, 100000);
 });*/
 
-function fonction(operation){
+function fonction(operation,direction){
 
 
-    const direction = button.getAttribute("data-direction");
+    //const direction = button.getAttribute("data-direction");
     const stock = parseInt(document.querySelector(`tr td.stock[data-direction="${direction}"]`).textContent);
-    console.log(stock);
 
 
     xhttp = new XMLHttpRequest();
@@ -73,25 +80,23 @@ function fonction(operation){
 
             if (this.readyState == 4 && this.status == 200)
             {
-                //console.log(this.responseText);
-                document.getElementsByClassName("stock").innerHTML = this.responseText;
+                document.querySelector(`tr td.stock[data-direction="${direction}"]`).textContent = this.responseText;
 
             }
 
 
         };
-
         xhttp.open("POST", "updatePanier.php", true);
         xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhttp.send("quantite="+stock+"operation"+operation);
+        xhttp.send("quantite="+stock+"&operation="+operation);
 
 }
 
-function plus() {
+function plus(direction) {
 
-    fonction(true);
+    fonction(1,direction);
 }
 
-function moins() {
-    fonction(false);
+function moins(direction) {
+    fonction(0,direction);
 }

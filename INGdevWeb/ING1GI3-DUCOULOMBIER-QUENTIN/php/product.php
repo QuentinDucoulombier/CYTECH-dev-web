@@ -11,7 +11,17 @@
         <link rel="icon" type="image/png" href="../img/testlogo.png"/>
         <script type="text/javascript" src="../js/script.js"></script>
     </head>
-    <body>
+    <?php
+        if($_SESSION['statut'] == "client")
+        {
+            echo '<body onload="hideStock2()">';
+        }
+        else
+        {
+            echo '<body>';
+        }
+
+    ?>
         <header id="Header">
             <?php include 'header.php'; ?>  
         </header>
@@ -64,7 +74,6 @@
                         <th>Photo</th>
                     </thead>
                     <tbody>';
-                $dbname = "voyages";
                 mysqli_select_db($cnx, $dbname);
                 $query = "SELECT * FROM produits WHERE distance = '$distance' LIMIT 4";
                 $result = mysqli_query($cnx, $query);
@@ -78,9 +87,9 @@
                             <td class="stock" data-direction="'.$row["direction"].'">'.$row["stock"].'</td>
                             <td>
                                 <form method="POST" action="./ajoutPanier.php">
-                                    <button type="button" class="minus" data-direction="'.$row["direction"].'" onclick=moins()>-</button>
+                                    <button type="button" class="minus" data-direction="'.$row["direction"].'" onclick=moins("'.$row["direction"].'")>-</button>
                                     <input type="text" name="quantite" readonly class="quantity" value="0"/>
-                                    <button type="button" class="plus" data-direction="'.$row["direction"].'" onclick=plus()>+</button>
+                                    <button type="button" class="plus" data-direction="'.$row["direction"].'" onclick=plus("'.$row["direction"].'")>+</button>
                                     
                                     <p></p>
                                     <input type="hidden" name="description" value="'.$distance.'"/>
@@ -103,11 +112,19 @@
                 
                 mysqli_close($cnx);
             ?>
-        </section>
 
-            <button type="button" id="hideStocks" onclick="hideStock()">Cacher stock</button>
-            <p></p>
-        </section>
+        <?php
+            if($_SESSION['statut'] == "admin")
+            {
+                echo '
+                </section>
+
+                    <button type="button" id="hideStocks" onclick="hideStock()">Cacher stock</button>
+                    <p></p>
+                </section>';
+            }
+            
+        ?>
         <footer id="Footer">
             <?php include 'footer.php'; ?>
         </footer>

@@ -1,9 +1,14 @@
 <?php
-    //$op = $_POST["operation"];
+    $op = $_POST["operation"];
     $quantite = $_POST["quantite"];
 
-    $quantite --;
+    if($op == 0) {
+        $quantite ++;
+    }
+    else {
+        $quantite --;
+    }
     echo $quantite;
     
-   
+?>
     
