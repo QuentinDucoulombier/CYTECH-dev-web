@@ -1,9 +1,9 @@
-# TD3: PHP
+# TD4: AJAX ET SQL (FIN)
  
 ---
 
 Auteur: Quentin Ducoulombier  
-Date: 16/04/2023  
+Date: 17/05/2023  
 Email: ducoulombi@cy-tech.fr
 
 ---
