@@ -12,6 +12,7 @@
         <script type="text/javascript" src="../js/script.js"></script>
     </head>
     <?php
+        /*Cacher le stock de base si le statut est un client*/
         if($_SESSION['statut'] == "client")
         {
             echo '<body onload="hideStock2()">';

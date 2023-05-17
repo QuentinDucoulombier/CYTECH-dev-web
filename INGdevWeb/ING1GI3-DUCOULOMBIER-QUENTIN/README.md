@@ -28,9 +28,14 @@ Pour lancer le serveur il existe deux solutions:
 
 Pour naviguer sur le site web, vous n'êtes pas obligé de vous connecter.
 Cependant, pour se connecter vous pouvez soit:
-- Créer un nouveau profil
-- Utilisez le profil déjà existant: 
+- Créer un nouveau profil client
+- Utilisez le profil admin déjà existant: 
 ```
 identifiant: admin
 mot de passe: admin
+```
+- Utilisez le profil client déjà existant:
+```
+identifiant: Quentin
+mot de passe: motdepasse
 ```
